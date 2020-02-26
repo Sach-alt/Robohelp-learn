@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" />
+  <title>_NEW_PortaOne-Doc_Template</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/new_css.css" />
+</head>
+<body>
+  <div>
+    <div>
+      <p> </p>
+      <p class="Title">PortaBilling Administrator Guide</p>
+      <p> </p>
+      <p> </p>
+      <p> </p>
+      <h2><br/> ‎ <span> </span></h2>
+      <h1 class="Heading1">Copyright Notice &amp; Disclaimers</h1>
+      <p>Copyright © 2000–2018 PortaOne, Inc. All rights reserved</p>
+      <p>PortaBilling® Administrator Guide, January, 2020</p>
+      <p>Maintenance Release 82</p>
+      <p>V1.82.03</p>
+      <p>Please address your comments and suggestions to: Sales Department, PortaOne, Inc. Suite #408, 2963 Glen Drive, Coquitlam BC V3B 2P7 Canada.</p>
+      <p>Changes may be made periodically to the information in this publication. The changes will be incorporated in new editions of the guide. The software described in this document is furnished under a license agreement, and may be used or copied only
+        in accordance with the terms thereof. It is against the law to copy the software on any other medium, except as specifically provided for in the license agreement. The licensee may make one copy of the software for backup purposes. No part of
+        this publication may be reproduced, stored in a retrieval system, or transmitted in any form or by any means, electronic, mechanical, photocopied, recorded or otherwise, without the prior written permission of PortaOne Inc.</p>
+      <p>The software license and limited warranty for the accompanying products are set forth in the information packet supplied with the product, and are incorporated herein by this reference. If you cannot locate the software license, contact your PortaOne
+        representative for a copy.</p>
+      <p>All product names mentioned in this manual are for identification purposes only, and are either trademarks or registered trademarks of their respective owners.</p>
+      <p> </p>
+      <p> </p>
+      <p><br/> ‎ <span> </span></p>
+      <p class="TOCtitle">Table of contents</p>
+      <p> </p>
+      <p class="TOC1"><a class="Hyperlink" href="#_Toc26185363">Copyright Notice &amp; Disclaimers</a></p>
+      <p class="TOC1"><a class="Hyperlink" href="#_Toc26185364">Hardware and software requirements</a></p>
+    </div>
+    <div>
+      <p class="TOC2"><a class="Hyperlink" href="#_Toc26185365">Server system recommendations</a></p>
+      <p class="TOC2"><a class="Hyperlink" href="#_Toc26185366">Client system recommendations:</a></p>
+    </div>
+    <div>
+      <p class="TOC1"><a class="Hyperlink" href="#_Toc26185367">Installation</a></p>
+      <p class="TOC1"><a class="Hyperlink" href="#_Toc26185368">What is new in maintenance release 72?</a></p>
+    </div>
+    <div>
+      <p class="TOC2"><a class="Hyperlink" href="#_Toc26185369">Added:</a></p>
+      <p class="TOC2"><a class="Hyperlink" href="#_Toc26185370">Updated:</a></p>
+    </div>
+    <div>
+      <p class="TOC1"><a class="Hyperlink" href="#_Toc26185371">Overview</a></p>
+      <p class="TOC1"><a class="Hyperlink" href="#_Toc26185372">Components</a></p>
+    </div>
+    <div>
+      <p class="TOC2"><a class="Hyperlink" href="#_Toc26185373">Billing server</a></p>
+      <p class="TOC2"><a class="Hyperlink" href="#_Toc26185374">Web and replica database server</a></p>
+    </div>
+    <div>
+      <p class="TOC3"><a class="Hyperlink" href="#_Toc26185375">Web server</a></p>
+      <p class="TOC3"><a class="Hyperlink" href="#_Toc26185376">Replica database server</a></p>
+    </div>
+    <div>
+      <p class="TOC1"><a class="Hyperlink" href="#_Toc26185377">Appendix 1. Title and headings</a></p>
+      <p class="TOC1"><a class="Hyperlink" href="#_Toc26185378">Heading 1</a></p>
+    </div>
+    <div>
+      <p class="TOC2"><a class="Hyperlink" href="#_Toc26185379">Heading 2</a></p>
+    </div>
+    <div>
+      <p class="TOC3"><a class="Hyperlink" href="#_Toc26185380">Heading 3</a></p>
+    </div>
+    <div>
+      <p><a class="Hyperlink" href="#_Toc26185381">Heading 4</a></p>
+    </div>
+    <div>
+      <p class="TOC1"><a class="Hyperlink" href="#_Toc26185382">Appendix 2. Tables</a></p>
+      <p class="TOC1"><a class="Hyperlink" href="#_Toc26185383">Appendix 2. Code</a></p>
+      <p> </p>
+      <p> </p>
+      <p> </p>
+      <p><br/> ‎ <span> </span></p>
+      <h1>Preface</h1>
+      <p>PortaSwitch® Maintenance Release 82 is the next leap-forward release, consistent with our “fast releases, precisely on time” ideology.</p>
+      <h4>Where to get the latest version of this guide</h4>
+      <p>The hard copy of this guide is updated upon major releases only and does not always contain the latest material on enhancements introduced between major releases. The online copy of this guide is always up-to-date and integrates the latest changes
+        to the product. You can access the latest copy of this guide at <a class="Hyperlink" href="http://www.portaone.com/support/documentation/">www.portaone.com/support/documentation/</a>.</p>
+      <h2>Conventions</h2>
+      <p>This publication uses the following conventions:</p>
+    </div>
+    <div>
+      <ul class="List13" data-start="1" xmlns="">
+        <li>Commands and keywords are given in boldface.</li>
+        <li>Terminal sessions, console screens, or system file names are displayed in fixed width font.</li>
+      </ul>
+    </div>
+    <div>
+      <p><img alt="C:\Users\nastena\Downloads\docicon_attention.png" height="36.3" src="../assets/images/_NEW_PortaOne-Doc_Template_files/image1.png" width="36.3" /> The exclamation mark draws your attention to important actions that must be taken for proper
+        configuration.</p>
+      <p class="redNote">NOTE: Notes contain additional information to supplement or accentuate important points in the text.</p>
+      <p><img alt="C:\Users\nastena\Downloads\docicon_timesaver.png" height="36.3" src="../assets/images/_NEW_PortaOne-Doc_Template_files/image2.png" width="36.3" /> Timesaver means that you can save time by performing the action described here.</p>
+      <p><img alt="C:\Users\nastena\Downloads\docicon_archive.png" height="36.3" src="../assets/images/_NEW_PortaOne-Doc_Template_files/image3.png" width="36.3" /> Archivist explains how the feature worked in previous releases.</p>
+      <p><img alt="C:\Users\nastena\Downloads\docicon_gear.png" height="36.3" src="../assets/images/_NEW_PortaOne-Doc_Template_files/image4.png" width="36.3" /> Gear points out that this feature must be enabled on the Configuration server.</p>
+      <p><img alt="C:\Users\nastena\Downloads\docicon_tips.png" height="36.3" src="../assets/images/_NEW_PortaOne-Doc_Template_files/image5.png" width="36.3" />Tips provide information that might help you solve a problem.</p>
+      <h2>Trademarks and copyrights</h2>
+      <p>PortaBilling®, PortaSIP® and PortaSwitch® are registered trademarks of PortaOne, Inc.</p>
+      <h1>Hardware and software requirements</h1>
+      <h2>Server system recommendations</h2>
+    </div>
+    <div>
+      <p>Four (4) Linux Servers for the PortaBilling®:</p>
+    </div>
+    <div>
+      <p>Real-time billing engine (RADIUS).</p>
+      <p>Main database server.</p>
+      <p>Server for web-interfaces (web interface for administrators and self-care portal, XML API services, periodic tasks, invoicing) and replica database.</p>
+      <p>Configuration management (this server is also used for monitoring the other servers and collecting and processing log information).</p>
+    </div>
+    <div>
+      <p>A minimum of 250 GB of available disk space on each billing server. On the average, 200,000 CDRs take up about 1 GB of disk space (this includes database files, indexes and binary logs, raw RADIUS detail files, billing engine log files and other
+        related information), plus you need to reserve an amount of free space roughly equal to the projected database size for performing operations such as backup. RAID is recommended in order to improve performance and reliability.</p>
+    </div>
+    <div>
+      <p>The Configuration server requires about 500 GB of free disk space if you are using PortaSwitch® (where log files from the PortaSIP® dispatching and processing nodes need to be processed), and 250 GB of free disk space if you are using the PortaBilling®
+        standalone.</p>
+    </div>
+    <div>
+      <p>A 64-bit processor (Xeon, Opteron).</p>
+      <p>At least 8 GB of RAM, 16 GB recommended.</p>
+      <p>Two Gigabit network ports (can be two separate network adapters or a single dual-port adapter).</p>
+    </div>
+    <div>
+      <p> </p>
+      <p>For additional details and configuration advice, see the Hardware</p>
+      <p>Recommendations topic on our website:</p>
+      <p><a href="http://www.portaone.com/support/hw-requirements/"><span class="Hyperlink"><span class="Hyperlink">http://www.portaone.com/support/hw-requirements/</span></span></a></p>
+      <p><a class="Hyperlink" href="http://www.portaone.com/support/hw-requirements/">For information about whether particular hardware is supported by Oracle Enterprise Linux used as the operating system in PortaSwitch®, consult the related document on the Oracle or RedHat website:</a>        <a href="https://hardware.redhat.com/"> </a><a class="Hyperlink" href="https://hardware.redhat.com/">https://hardware.redhat.com/</a>.</p>
+      <h2><a id="_Toc26185366"></a>Client system recommendations:</h2>
+    </div>
+    <div>
+      <ul class="List12" data-start="1" xmlns="">
+        <li>OS: MS Windows XP or above, Linux/BSD, Mac OS X 10.6 or above.</li>
+        <li>Web browser:</li>
+      </ul>
+    </div>
+    <div>
+      <ul class="List10" data-start="2.1" xmlns="">
+        <li>
+          <ul data-start="2.1">
+            <li>Google Chrome 55 or above, Mozilla Firefox 50 or above.</li>
+            <li>JavaScript and cookies must be enabled.</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <ul class="List10" data-start="3" xmlns="">
+        <li>Spreadsheet processor: MS Excel, OpenOffice Calc, LibreOffice Calc, Google Sheets.</li>
+        <li>Display settings: a minimum screen resolution of 1366 × 768.</li>
+      </ul>
+    </div>
+    <div>
+      <h1><a id="_Toc26185367"></a>Installation</h1>
+      <p>PortaSwitch® installation ISO files contain everything required for installing Oracle Enterprise Linux (64-bit version), PortaSwitch® and the supplementary packages that are necessary for convenient system administration and maintenance.</p>
+      <p>After the installation is complete you will assign roles (e.g. RADIUS, web interface, etc.) to individual servers using the Configuration server tool – this will automatically enable the required components of PortaSwitch® software on each server.</p>
+      <p>PortaSwitch® installation and configuration are automated and integrated within the main installation process. This allows you to install a completely functional PortaSwitch® environment from scratch in less than one hour!</p>
+      <p>For detailed installation instructions, please refer to the PortaBilling<sup>®</sup><a href="http://www.portaone.com/support/documentation/"> Installation Guide</a>.</p>
+      <h1><a id="_Toc26185368"></a>What is new in maintenance release 82?</h1>
+      <h2><a id="_Toc26185369"></a>Added:</h2>
+    </div>
+    <div>
+      <p>The IP aliasing section to Web cluster chapter.</p>
+    </div>
+    <div>
+      <h2><a id="_Toc26185370"></a>Updated:</h2>
+    </div>
+    <div>
+      <p>The xDR mediation concept chapter.</p>
+    </div>
+    <div>
+      <p> </p>
+      <p><br/> ‎ <span> </span></p>
+    </div>
+    <div>
+      <p class="Numbering81"><a id="_6j4is4du9wue"></a>System architecture</p>
+    </div>
+    <div>
+      <h1><a id="_Toc26185371"></a>Overview</h1>
+      <p>PortaBilling<sup>®</sup> is a carrier-grade converged billing / provisioning system for communication service providers. It communicates with elements of your network (such as VoIP gateways or WiFi/DSL access points), provides these nodes with authentication
+        or authorization (determining whether a customer should be admitted and provided with a service), and gathers billing events, i.e. data about services rendered to your customers. Based on this information, it performs rating for the services,
+        creates transaction records (also called xDRs - eXtensible Detail Records), and modifies customers’ balances accordingly.</p>
+      <p><img alt="image2.png" height="266.0" src="../assets/images/_NEW_PortaOne-Doc_Template_files/image6.png" width="463.5" /></p>
+      <p>All this happens in real time, so the billing data is updated as soon as a session is completed (e.g. the customer hangs up his phone, or an SMS message has been sent). PortaBilling® provides a unified platform for multiple services, which allows
+        you to use it to charge clients for their voice calls, messages, and data transfer, thus effectively deploying triple-play on your network.</p>
+      <p>PortaBilling® will act as the nerve center of your network. After you have entered information about your services, rates, customers and so on via the web interface, PortaBilling® will communicate in real time with elements of your network to supply
+        information regarding which customers the service should be provided to (and which not), as well as exactly how it should be provided. Customers whose balance has run out will be disconnected immediately after exceeding the maximum session duration
+        and (since billing happens in real time) funds will be withdrawn from their account and service denied if they attempt to use the service.</p>
+      <h1><a id="_Toc26185372"></a>Components</h1>
+      <h2><a id="_Toc26185373"></a>Billing server</h2>
+      <p>The billing server hosts the billing engine which communicates with the nodes via the RADIUS protocol. It can also process Diameter requests that are received from nodes provisioned for services via the Diameter protocol.</p>
+      <p>The billing engine provides:</p>
+    </div>
+    <div>
+      <ul>
+        <li>
+          <p class="Normal">Authentication – It tells the node whether the subscriber (identified by phone number, PIN, IP, or the like) is allowed to use a specific service (e.g. voice calls or wireless Internet access), and returns attributes such as current balance.</p>
+        </li>
+        <li>
+          <p class="Normal">Authorization – It tells the node whether the subscriber (identified by phone number, PIN, IP, or the like) is allowed to initiate a session with specific parameters within a service (e.g. calling a particular phone number), and returns session
+            attributes such as the maximum allowed session duration or the allowed amount of bandwidth.</p>
+        </li>
+        <li>
+          <p class="Normal">Interim (also called keep-alive) accounting processing – This is used for services like Internet access, when nodes constantly update the billing about usage for the current session.</p>
+        </li>
+        <li>
+          <p class="Normal">Accounting processing – Based on information from the gateways, it bills the session and writes transaction records to the database.</p>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h2><a id="_Toc26185374"></a>Web and replica database server</h2>
+      <h3><a id="_Toc26185375"></a>Web server</h3>
+      <p>The web server hosts the following:</p>
+    </div>
+    <div>
+      <ul class="List10">
+        <li>
+          <p class="Normal">Web interface, consisting of:</p>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li>
+          <p class="Normal">Admin interface.</p>
+        </li>
+        <li>
+          <p class="Normal">Account self-care.</p>
+        </li>
+        <li>
+          <p class="Normal">Customer self-care.</p>
+        </li>
+        <li>
+          <p class="Normal">Reseller’s helpdesk (self-care; customer care).</p>
+        </li>
+        <li>
+          <p class="Normal">Distributor self-care.</p>
+        </li>
+        <li>
+          <p class="Normal">Vendor self-care.</p>
+        </li>
+        <li>
+          <p class="Normal">Representative self-care.</p>
+        </li>
+        <li>
+          <p class="Normal">Online web signup interface.</p>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <ul class="List17" data-start="1" xmlns="">
+        <li>
+          <p class="Normal">Scripts for generating invoices, calculating various statistics and producing reports.</p>
+        </li>
+        <li>
+          <p class="Normal">Optional IVR (TFTP) server.</p>
+        </li>
+        <li>
+          <p class="Normal">XML API (SOAP) interface for integration with external applications.</p>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3><a id="_Toc26185376"></a>Replica database server</h3>
+      <p>The replica database server hosts the second copy of the database.</p>
+      <p>This database is used for all data mining activities (e.g. calculating a summary for the invoice or producing reports) and can be used to restore billing data in the event that the main database is lost.</p>
+    </div>
+    <div>
+      <p class="Numbering81"><a id="_j7htnkrcthd0"></a> System concepts</p>
+    </div>
+    <div>
+      <p> </p>
+      <p><br/> ‎ <span> </span></p>
+      <h1><a id="_Toc26185377"></a>Appendix 1. Title and headings</h1>
+      <p class="Title"><a id="_p0qgvnhhowth"></a>Title</p>
+      <h1><a id="_Toc26185378"></a>Heading 1</h1>
+      <h2><a id="_Toc26185379"></a>Heading 2</h2>
+      <h3><a id="_Toc26185380"></a>Heading 3</h3>
+      <h4><a id="_Toc26185381"></a>Heading 4</h4>
+      <p>Paragraph text.</p>
+      <p> </p>
+      <p class="Subtitle"><a id="_lmu0mee5nqu5"></a>Code - Subtitle</p>
+      <p> </p>
+      <h1><a id="_Toc26185382"></a>Appendix 2. Tables</h1>
+    </div>
+    <div align="left">
+      <table border="1.3" cellspacing="0" style="width:650.4px">
+        <colgroup xmlns="">
+          <col style="width:78.933333333333333333333333333px" />
+          <col style="width:80.8px" />
+          <col style="width:78px" />
+          <col style="width:81.73333333333333333333333333px" />
+          <col style="width:78px" />
+          <col style="width:79.86666666666666666666666667px" />
+          <col style="width:83.6px" />
+          <col style="width:89.13333333333333333333333333px" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <td>
+              <div>
+                <p>Header</p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <p>1234</p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+            <td>
+              <div>
+                <p> </p>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <p> </p>
+      <h1><a id="_Toc26185383"></a>Appendix 2. Code</h1>
+      <p class="Subtitle">Amount_Charged =</p>
+      <p class="Subtitle">= (Connect_Fee +</p>
+      <p class="Subtitle">+ First_Interval * Price_First/60 +</p>
+      <p class="Subtitle">+ 8 * Next_Interval * Price_N/60) *</p>
+      <p class="Subtitle"><a id="_31v2stbx60j"></a>* (1+Post_Call_Surcharge/100)</p>
+      <p class="Subtitle"> </p>
+      <p class="Subtitle"> </p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,492 @@
+ul>li:before {
+  counter-increment: item1;
+  content: counter(item1, disc);
+  text-align: right;
+  position: absolute;
+  left: calc(-1 * var(--prefix-size) - var(--prefix-gap));
+  margin-right: var(--prefix-gap);
+  width: var(--prefix-size);
+  overflow: hidden;
+  font-family: Roboto;
+  font-size: 11pt;
+  font-style: normal;
+  color: #000000
+}
+h1.Heading1 {
+  margin-top: 24pt;
+  line-height: 110.0%;
+  margin-bottom: 8pt;
+  font-family: Roboto;
+  font-size: 24pt;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: normal;
+  font-weight: bold
+}
+h1 {
+  margin-top: 24pt;
+  line-height: 110.0%;
+  margin-bottom: 8pt;
+  font-family: Roboto;
+  font-size: 24pt;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: normal;
+  font-weight: bold
+}
+h2.Heading2 {
+  margin-top: 20pt;
+  line-height: 110.0%;
+  margin-bottom: 6pt;
+  font-family: Roboto;
+  font-size: 18pt;
+  margin-left: 0;
+  margin-right: 0;
+  color: #434343;
+  font-style: normal;
+  font-weight: normal
+}
+h2 {
+  margin-top: 20pt;
+  line-height: 110.0%;
+  margin-bottom: 6pt;
+  font-family: Roboto;
+  font-size: 18pt;
+  margin-left: 0;
+  margin-right: 0;
+  color: #434343;
+  font-style: normal;
+  font-weight: normal
+}
+h3.Heading3 {
+  margin-top: 16pt;
+  line-height: 110.0%;
+  margin-bottom: 6pt;
+  font-family: 'Roboto Medium';
+  font-size: 14pt;
+  margin-left: 0;
+  margin-right: 0;
+  color: #666666;
+  font-style: normal;
+  font-weight: normal
+}
+h3 {
+  margin-top: 16pt;
+  line-height: 110.0%;
+  margin-bottom: 6pt;
+  font-family: 'Roboto Medium';
+  font-size: 14pt;
+  margin-left: 0;
+  margin-right: 0;
+  color: #666666;
+  font-style: normal;
+  font-weight: normal
+}
+h4.Heading4 {
+  margin-top: 16pt;
+  line-height: 110.0%;
+  margin-bottom: 6pt;
+  font-family: Roboto;
+  font-size: 12pt;
+  margin-left: 0;
+  margin-right: 0;
+  color: #666666;
+  font-style: normal;
+  font-weight: bold
+}
+h4 {
+  margin-top: 16pt;
+  line-height: 110.0%;
+  margin-bottom: 6pt;
+  font-family: Roboto;
+  font-size: 12pt;
+  margin-left: 0;
+  margin-right: 0;
+  color: #666666;
+  font-style: normal;
+  font-weight: bold
+}
+a.Hyperlink {
+  color: #1155CC;
+  font-family: Roboto;
+  font-size: 11pt;
+  text-decoration: underline;
+  font-style: normal;
+  font-weight: bold;
+  margin: 0;
+  padding: 0
+}
+ul.List10 {
+  counter-reset: item1;
+  --prefix-size: 40px;
+  --prefix-gap: 4px;
+  --list-indent: 40px;
+  --prefix-fixed-size: false;
+  list-style: none;
+  padding-left: var(--prefix-size);
+  margin-left: calc(var(--list-indent) - var(--prefix-size));
+  --vertical-spacing: 0px
+}
+ul {
+  counter-reset: item1;
+  --prefix-size: 40px;
+  --prefix-gap: 4px;
+  --list-indent: 40px;
+  --prefix-fixed-size: false;
+  list-style: none;
+  padding-left: var(--prefix-size);
+  margin-left: calc(var(--list-indent) - var(--prefix-size));
+  --vertical-spacing: 0px
+}
+ul.List12 {
+  counter-reset: item1;
+  --prefix-size: 40px;
+  --prefix-gap: 4px;
+  --list-indent: 40px;
+  --prefix-fixed-size: false;
+  list-style: none;
+  padding-left: var(--prefix-size);
+  margin-left: calc(var(--list-indent) - var(--prefix-size));
+  --vertical-spacing: 0px
+}
+ul.List13 {
+  counter-reset: section131;
+  --prefix-size: 40px;
+  --prefix-gap: 4px;
+  --list-indent: 40px;
+  --prefix-fixed-size: false;
+  list-style: none;
+  padding-left: var(--prefix-size);
+  margin-left: calc(var(--list-indent) - var(--prefix-size))
+}
+ul.List17 {
+  counter-reset: section171;
+  --prefix-size: 40px;
+  --prefix-gap: 4px;
+  --list-indent: 40px;
+  --prefix-fixed-size: false;
+  list-style: none;
+  padding-left: var(--prefix-size);
+  margin-left: calc(var(--list-indent) - var(--prefix-size))
+}
+p.ListParagraph {
+  margin-top: 5pt;
+  line-height: 110.0%;
+  margin-bottom: 0;
+  font-family: Symbol;
+  font-size: 11pt;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: normal;
+  font-weight: normal
+}
+p.Normal {
+  margin-top: 8pt;
+  line-height: 110.0%;
+  font-family: Roboto;
+  font-size: 11pt;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: .001pt;
+  font-style: normal;
+  font-weight: normal
+}
+p {
+  margin-top: 8pt;
+  line-height: 110.0%;
+  font-family: Roboto;
+  font-size: 11pt;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: .001pt;
+  font-style: normal;
+  font-weight: normal
+}
+table.NormalTable {
+  border-collapse: collapse;
+  margin-left: 0;
+  margin-bottom: .001pt
+}
+p.Numbering81 {
+  margin-top: 18pt;
+  line-height: 125.0%;
+  margin-bottom: 12pt;
+  font-family: Michroma;
+  font-size: 24pt;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: normal;
+  font-weight: normal
+}
+p.Numbering81::before {
+  counter-increment: Numbering81;
+  content: counter(Numbering81, decimal)".";
+  padding-right: 0.5rem
+}
+p.Subtitle {
+  margin-top: 0;
+  line-height: 110.0%;
+  font-family: Roboto Mono Light;
+  font-size: 10pt;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: .001pt;
+  color: #434343;
+  font-style: normal;
+  font-weight: normal
+}
+p.TOC1 {
+  margin-top: 8pt;
+  line-height: 110.0%;
+  margin-bottom: 5pt;
+  font-family: Roboto;
+  font-size: 11pt;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: normal;
+  font-weight: normal
+}
+p.TOC2 {
+  margin-top: 8pt;
+  line-height: 110.0%;
+  margin-bottom: 5pt;
+  font-family: Roboto;
+  font-size: 11pt;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: normal;
+  font-weight: normal
+}
+p.TOC3 {
+  margin-top: 8pt;
+  line-height: 110.0%;
+  margin-bottom: 5pt;
+  font-family: Roboto;
+  font-size: 11pt;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: normal;
+  font-weight: normal
+}
+p.TOCtitle {
+  margin-top: 18pt;
+  line-height: 125.0%;
+  margin-bottom: 12pt;
+  font-family: Michroma;
+  font-size: 14pt;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: normal;
+  font-weight: normal
+}
+p.Title {
+  margin-top: 18pt;
+  line-height: 125.0%;
+  margin-bottom: 12pt;
+  font-family: Michroma;
+  font-size: 24pt;
+  margin-left: 0;
+  margin-right: 0;
+  font-style: normal;
+  font-weight: normal
+}
+body {
+  counter-reset: Numbering31 Numbering32 Numbering21 Numbering41 Numbering81 Numbering51 Numbering52
+}
+p.redNote {
+  margin-top: 8pt;
+  line-height: 110.0%;
+  margin-bottom: 5pt;
+  font-family: Roboto;
+  font-size: 9pt;
+  margin-left: 0;
+  margin-right: 0;
+  color: #800000;
+  font-style: normal;
+  font-weight: normal
+}
+span {
+  white-space: pre-wrap
+}
+ul.List10>li {
+  position: relative;
+  --prefix-size: 40px;
+  --prefix-fixed-size: false;
+  --prefix-gap: 4px;
+  --list-indent: 40px;
+  --vertical-spacing: 0px;
+  margin-top: calc(var(--vertical-spacing) / 2);
+  margin-bottom: calc(var(--vertical-spacing) / 2)
+}
+ul>li {
+  position: relative;
+  --prefix-size: 40px;
+  --prefix-fixed-size: false;
+  --prefix-gap: 4px;
+  --list-indent: 40px;
+  --vertical-spacing: 0px;
+  margin-top: calc(var(--vertical-spacing) / 2);
+  margin-bottom: calc(var(--vertical-spacing) / 2)
+}
+ul.List10>li::before {
+  counter-increment: section101;
+  content: counter(bullet, disc);
+  --prefix-size: 40px;
+  --prefix-gap: 4px;
+  --list-indent: 40px;
+  --prefix-fixed-size: false;
+  text-align: right;
+  position: absolute;
+  left: calc(-1 * var(--prefix-size) - var(--prefix-gap));
+  margin-right: var(--prefix-gap);
+  width: var(--prefix-size);
+  overflow: hidden
+}
+ul>li::before {
+  counter-increment: section101;
+  content: counter(bullet, disc);
+  --prefix-size: 40px;
+  --prefix-gap: 4px;
+  --list-indent: 40px;
+  --prefix-fixed-size: false;
+  text-align: right;
+  position: absolute;
+  left: calc(-1 * var(--prefix-size) - var(--prefix-gap));
+  margin-right: var(--prefix-gap);
+  width: var(--prefix-size);
+  overflow: hidden
+}
+ul.List10>li>ul {
+  counter-reset: section102;
+  --prefix-size: 40px;
+  --prefix-gap: 4px;
+  --list-indent: 40px;
+  --prefix-fixed-size: false;
+  list-style: none;
+  padding-left: var(--prefix-size);
+  margin-left: calc(var(--list-indent) - var(--prefix-size))
+}
+ul>li>ul {
+  counter-reset: section102;
+  --prefix-size: 40px;
+  --prefix-gap: 4px;
+  --list-indent: 40px;
+  --prefix-fixed-size: false;
+  list-style: none;
+  padding-left: var(--prefix-size);
+  margin-left: calc(var(--list-indent) - var(--prefix-size))
+}
+ul.List10>li>ul>li {
+  position: relative
+}
+ul>li>ul>li {
+  position: relative
+}
+ul.List10>li>ul>li::before {
+  counter-increment: section102;
+  content: counter(bullet, disc);
+  --prefix-size: 40px;
+  --prefix-gap: 4px;
+  --list-indent: 40px;
+  --prefix-fixed-size: false;
+  text-align: right;
+  position: absolute;
+  left: calc(-1 * var(--prefix-size) - var(--prefix-gap));
+  margin-right: var(--prefix-gap);
+  width: var(--prefix-size);
+  overflow: hidden
+}
+ul>li>ul>li::before {
+  counter-increment: section102;
+  content: counter(bullet, disc);
+  --prefix-size: 40px;
+  --prefix-gap: 4px;
+  --list-indent: 40px;
+  --prefix-fixed-size: false;
+  text-align: right;
+  position: absolute;
+  left: calc(-1 * var(--prefix-size) - var(--prefix-gap));
+  margin-right: var(--prefix-gap);
+  width: var(--prefix-size);
+  overflow: hidden
+}
+ul.List12>li {
+  position: relative;
+  --prefix-size: 40px;
+  --prefix-fixed-size: false;
+  --prefix-gap: 4px;
+  --list-indent: 40px;
+  --vertical-spacing: 0px;
+  margin-top: calc(var(--vertical-spacing) / 2);
+  margin-bottom: calc(var(--vertical-spacing) / 2)
+}
+ul.List12>li::before {
+  counter-increment: section121;
+  content: counter(bullet, disc);
+  --prefix-size: 40px;
+  --prefix-gap: 4px;
+  --list-indent: 40px;
+  --prefix-fixed-size: false;
+  text-align: right;
+  position: absolute;
+  left: calc(-1 * var(--prefix-size) - var(--prefix-gap));
+  margin-right: var(--prefix-gap);
+  width: var(--prefix-size);
+  overflow: hidden
+}
+ul.List13>li {
+  position: relative
+}
+ul.List13>li::before {
+  counter-increment: section131;
+  content: counter(bullet, disc);
+  --prefix-size: 40px;
+  --prefix-gap: 4px;
+  --list-indent: 40px;
+  --prefix-fixed-size: false;
+  text-align: right;
+  position: absolute;
+  left: calc(-1 * var(--prefix-size) - var(--prefix-gap));
+  margin-right: var(--prefix-gap);
+  width: var(--prefix-size);
+  overflow: hidden
+}
+ul.List17>li {
+  position: relative
+}
+ul.List17>li::before {
+  counter-increment: section171;
+  content: counter(bullet, disc);
+  --prefix-size: 40px;
+  --prefix-gap: 4px;
+  --list-indent: 40px;
+  --prefix-fixed-size: false;
+  text-align: right;
+  position: absolute;
+  left: calc(-1 * var(--prefix-size) - var(--prefix-gap));
+  margin-right: var(--prefix-gap);
+  width: var(--prefix-size);
+  overflow: hidden
+}
+ul.List10>li:before {
+  counter-increment: item1;
+  content: counter(item1, none);
+  text-align: right;
+  position: absolute;
+  left: calc(-1 * var(--prefix-size) - var(--prefix-gap));
+  margin-right: var(--prefix-gap);
+  width: var(--prefix-size);
+  overflow: hidden;
+  font-family: Roboto;
+  font-size: 11pt
+}
+ul.List12>li:before {
+  counter-increment: item1;
+  content: counter(item1, none);
+  text-align: right;
+  position: absolute;
+  left: calc(-1 * var(--prefix-size) - var(--prefix-gap));
+  margin-right: var(--prefix-gap);
+  width: var(--prefix-size);
+  overflow: hidden
+}

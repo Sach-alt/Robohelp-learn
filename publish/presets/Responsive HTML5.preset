@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preset>
+  <content>
+    <conditional>
+      <name>Wireless</name>
+      <path>../expressions/Wireless.expn</path>
+    </conditional>
+    <toc>
+      <path>../../toc/PortaBilling_Admin_Guide_Wireless.toc</path>
+      <name>PortaBilling_Admin_Guide_Wireless</name>
+    </toc>
+    <index type="boolean">true</index>
+    <glossary>
+      <name>Default</name>
+      <path>../../glossary/Default.glo</path>
+    </glossary>
+    <brs type="array"></brs>
+    <language>
+      <code type="number">1033</code>
+      <displayName>English (US)</displayName>
+      <name>en_US</name>
+    </language>
+    <masterpage>
+      <path>../../contents/assets/masterpages/PDF_for_Wireless.htt</path>
+      <name>PDF_for_Wireless</name>
+    </masterpage>
+    <includeExpandingText type="boolean">true</includeExpandingText>
+    <includeDropdownText type="boolean">true</includeDropdownText>
+  </content>
+  <title>PortaBilling Admin Guide {ReleaseNumber}</title>
+  <type>html5</type>
+  <glosstermEffect type="number">0</glosstermEffect>
+  <outputPath>D:/RH test/RH2019 test outputs/HTML/</outputPath>
+  <name>Responsive HTML5</name>
+  <starterPage>index.htm</starterPage>
+  <defaultTopic>
+    <name>PortaBilling_Admin_Guide</name>
+    <path>../../contents/PortaBilling_Administrator_Guide/PortaBilling_Admin_Guide.htm</path>
+  </defaultTopic>
+  <lowercasenames type="boolean">true</lowercasenames>
+  <mobileapp>
+    <android type="boolean">true</android>
+    <iOS type="boolean">false</iOS>
+  </mobileapp>
+  <search>
+    <suggestion type="boolean">true</suggestion>
+    <context type="boolean">true</context>
+    <contextLimit type="number">100</contextLimit>
+    <maxSearchresults type="number">20</maxSearchresults>
+    <glossary type="boolean">true</glossary>
+    <showSpeclChars type="boolean">false</showSpeclChars>
+    <speclChars>0;1;2;3;4;5;6;7;8;9</speclChars>
+    <fuzzy type="boolean">true</fuzzy>
+  </search>
+  <sitemap>
+    <use type="boolean">true</use>
+    <helpBaseURL></helpBaseURL>
+    <changeFrequency></changeFrequency>
+  </sitemap>
+  <skin>
+    <name>html5</name>
+    <path>../skins/Azure_Blue/html5.skn</path>
+  </skin>
+  <createThumbNails type="boolean">true</createThumbNails>
+  <styledthumbnails type="boolean">false</styledthumbnails>
+  <use_thumbnails type="boolean">true</use_thumbnails>
+  <favicon>
+    <name>_1portaone</name>
+    <path>../../contents/assets/images/_1portaone.ico</path>
+  </favicon>
+  <patchHomepage type="boolean">true</patchHomepage>
+  <gdprCompliance type="boolean">true</gdprCompliance>
+</preset>

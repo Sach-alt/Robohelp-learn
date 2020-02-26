@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preset>
+  <content>
+    <conditional>
+      <path>../expressions/Wireless.expn</path>
+      <name>Wireless</name>
+    </conditional>
+    <toc>
+      <path>../../toc/PortaBilling_Admin_Guide_Wireless.toc</path>
+      <name>PortaBilling_Admin_Guide_Wireless</name>
+    </toc>
+    <index type="boolean">true</index>
+    <glossary>
+      <name>Default</name>
+      <path>../../glossary/Default.glo</path>
+    </glossary>
+    <brs type="array"></brs>
+    <language>
+      <code type="number">1033</code>
+      <displayName>English (US)</displayName>
+      <name>en_US</name>
+    </language>
+    <mapFiles type="array"></mapFiles>
+    <includeExpandingText type="boolean">true</includeExpandingText>
+    <includeDropdownText type="boolean">true</includeDropdownText>
+  </content>
+  <title>Frameless test</title>
+  <type>frameless</type>
+  <glosstermEffect type="number">0</glosstermEffect>
+  <outputPath>D:/RH test/RH2019 test outputs/</outputPath>
+  <name>Frameless</name>
+  <starterPage>index.htm</starterPage>
+  <defaultTopic>
+    <name>PortaBilling_Admin_Guide</name>
+    <path>../../contents/PortaBilling_Administrator_Guide/PortaBilling_Admin_Guide.htm</path>
+  </defaultTopic>
+  <lowercasenames type="boolean">true</lowercasenames>
+  <mobileapp>
+    <android type="boolean">true</android>
+    <iOS type="boolean">false</iOS>
+  </mobileapp>
+  <search>
+    <suggestion type="boolean">true</suggestion>
+    <context type="boolean">false</context>
+    <contextLimit>100</contextLimit>
+    <maxSearchresults type="number">20</maxSearchresults>
+    <glossary type="boolean">true</glossary>
+    <showSpeclChars type="boolean">false</showSpeclChars>
+    <speclChars>0;1;2;3;4;5;6;7;8;9</speclChars>
+    <fuzzy type="boolean">true</fuzzy>
+  </search>
+  <sitemap>
+    <use type="boolean">false</use>
+    <helpBaseURL></helpBaseURL>
+    <changeFrequency></changeFrequency>
+  </sitemap>
+  <skin>
+    <path>../skins/Oceanic/frameless.skn</path>
+  </skin>
+  <createThumbNails type="boolean">true</createThumbNails>
+  <styledthumbnails type="boolean">false</styledthumbnails>
+  <use_thumbnails type="boolean">true</use_thumbnails>
+  <favicon>
+    <name>_1portaone</name>
+    <path>../../contents/assets/images/_1portaone.ico</path>
+  </favicon>
+  <patchHomepage type="boolean">true</patchHomepage>
+  <gdprCompliance type="boolean">true</gdprCompliance>
+</preset>

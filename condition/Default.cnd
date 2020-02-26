@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<val>
+  <prop att="Others" val="VoIP" backcolor="#C0C0C0" color="#000000"></prop>
+  <prop att="Others" val="Wireless" backcolor="#FFDCF9" color="#000000"></prop>
+</val>

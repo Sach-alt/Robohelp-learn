@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" />
+  <title>PortaBilling® performance</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+</head>
+<body>
+  <div>
+    <h2>PortaBilling® performance</h2>
+    <p>When buying a new car, you are obviously interested in performance parameters such as “how fast can it go?” The maximum speed you can achieve depends, of course, on your car’s technical parameters, such as engine horsepower strength or total car body
+      weight. In general, the more powerful the car you buy, the faster it will go. However, the actual speed of the car at any given moment depends on many other criteria too, such as how many passengers are in the car, how much weight is being carried
+      in its trunk, what are the road conditions (paved highway vs. gravel road), etc.</p>
+    <p> </p>
+    <p>The situation with billing systems is quite similar. Typical questions are: ‘How many customers can I have?’, ‘How many concurrent calls can the system handle?’ or ‘How many messages or call minutes per month can I transport on my network?’. The actual
+      numbers depend not only on PortaBilling® functionality, your hardware’s specification, but also on your billing configuration, traffic patterns and types of services provided.</p>
+    <p> </p>
+    <p>PortaBilling® communicates with the network nodes via <span data-condition="Others:VoIP">the RADIUS</span> <span data-condition="Others:Wireless">Diameter </span>protocol for session authorization and rating. </p>
+    <p> </p>
+    <p>Note that the performance results are given for a single billing server with 32 active processing engines running on the <a href="https://www.portaone.com/support/hw-requirements">recommended hardware</a>. Performance results will be different for
+      different number of processing engines. The performance of PortaBilling® cluster is higher than that of a single billing server.</p>
+    <h3><span data-condition="Others:VoIP">PortaBilling®</span><span data-condition="Others:VoIP"> RADIUS performance</span></h3>
+    <p data-condition="Others:VoIP">Each call attempt or completed call on your network generates several RADIUS requests, with the total number of requests and their type dependent upon the kind of service provided. For services such as IP Centrex, which involve call authorization,
+      route calculation and xDR processing, PortaBilling® can handle about 90 CAPS (call attempts per second). This means that each second 90 users can begin a new phone call on your network. For postpaid wholesale services in which PortaBilling® only
+      processes the xDRs, the number of call attempts per second increases to about 230. The exact figures will depend upon the complexity of your billing configuration (e.g. how many rate plans, individual rates in a rate plan or carriers you have).
+      Since it is not possible to know which combination of different services you will provide on your network beforehand, it only makes sense to refer to a conservative estimate of the PortaBilling® processing speed, which has been calculated at 90
+      session initiations per second.</p>
+    <h4 data-condition="Others:VoIP">How many simultaneous (concurrent) calls does that translate to?</h4>
+    <p data-condition="Others:VoIP">This primarily depends on the average call duration and call success rate. Assuming an call processing speed of 90 CAPS, an average call duration of 5 minutes and a call success rate of 50% (industry norms), 50% of the 90 CAPS will succeed. This means
+      that 45 calls will become connected, and the same amount of previously connected calls will become disconnected. Since average call duration is 300 seconds, approximately 45*300 = 13,500 calls will be in a “connected” state at all times. If your
+      ASR changes, it will immediately impact the number of concurrent calls, e.g.:</p>
+    <ul data-condition="Others:VoIP">
+      <li>
+        <p class="List">ASR 25%: (90 * 25%) * 300 = 22.5 * 300 = 6,750 concurrent calls.</p>
+      </li>
+      <li>
+        <p class="List">ASR 60%: (90 * 60%) * 300 = 54 * 300 = 16,200 concurrent calls.</p>
+      </li>
+    </ul>
+    <h4 data-condition="Others:VoIP">How many minutes of monthly traffic can PortaBilling® support?</h4>
+    <p data-condition="Others:VoIP">Again, this depends mainly on your traffic patterns (the ratio between the duration of your peak and off-peak hours and the numbers of calls during peak and / or off-peak hours) and your call success rate. We can make estimates based on typical traffic
+      patterns (as indicated below) that occur during daily peak hours, medium load hours and off-peak hours. We should also bear in mind that your network must be able to handle all kinds of traffic – off-peak hour, peak hour and extraordinary traffic
+      splashes (e.g. New Year’s Eve) where there are 2 to 3 times more call attempts than during normal peak hours. Thus, the total performance capacity must be greater than the maximum anticipated BHCA (busy hours call attempts).</p>
+    <p data-condition="Others:VoIP"> </p>
+    <p data-condition="Others:VoIP">Using the same “industry norm” figures as above (50% ASR, 5 mins ALOC), PortaBilling® can process (90 * 50%) * 5 * 3600 = 810,000 minutes during peak hours. We can estimate that your total amount of daily traffic will be about 6 times the amount of
+      traffic during a single peak hour, i.e. 810,000 * 6 = 4,860,000 minutes per day. Then, multiplying the daily amount by the number of “business” days in a month, we get 4,860,000 * 20 = 97,200,000 minutes.</p>
+    <p data-condition="Others:VoIP"> </p>
+    <p data-condition="Others:VoIP">This is why, in our estimate (to be on the safe side and allow for some reserve capacity), PortaBilling® is poised to handle monthly traffic of over 95 million minutes.</p>
+    <p data-condition="Others:VoIP"> </p>
+    <p data-condition="Others:VoIP"><img alt="Attention" height="26" src="../assets/images/PortaBilling_Admin_Guide_MR82_files/Attention.gif" width="29" /> The results are calculated based on the maximum server’s capacity, which is 90 CAPS. However, we strongly advise you to reserve
+      some capacity of the billing server when you plan your infrastructure. This is required to handle traffic splashes and the traffic increase when your business grows.</p>
+    <h3><span data-condition="Others:Wireless">PortaBilling</span><span data-condition="Others:Wireless"> Diameter performance</span></h3>
+    <p data-condition="Others:Wireless">In mobile networks, the core components communicate with PortaBilling® via the Diameter (Gy) interface for Internet sessions and via Diameter (Ro) interface for voice calls and SMS. Therefore, let’s consider PortaBilling®’s performance for each, separately.</p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless"><img alt="Attention" height="26" src="../assets/images/PortaBilling_Admin_Guide_MR82_files/Attention.gif" width="29" /> Note that the performance data given below is for informational purposes only. It is measured for every service separately. Your
+      real performance highly depends on your server specs and the number of servers deployed.</p>
+    <h4 data-condition="Others:Wireless">Voice calls</h4>
+    <p data-condition="Others:Wireless">Similar to call processing via RADIUS, every call attempt in a mobile network results in several Diameter requests. Assuming that a call attempt includes call authorization, session update and xDR generation, PortaBilling® can handle about 140 CAPS
+      (call attempts per second). This means that 140 users can begin a new phone call on your network every second. The exact figures highly depend on your billing configuration: how many rate plans you have, how many rates there are in your rate plans,
+      what volume discounts you apply, etc.</p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless">To calculate how many concurrent calls this translates into, we must consider such call parameters as average success rate (ASR) and average length of call (ALOC). The ASR varies from country to country. For our estimation we’ll take the average ASR
+      value as 60% and an average call length as 3 minutes. Given the processing speed of 140 CAPS, this means that 140 * 60% = 84 calls become connected and the same number of previously connected calls become disconnected. With the average call length
+      of 3 minutes, this results into 84*180=15.200 concurrent calls.</p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless">The table below shows how the number of concurrent calls differs depending on the ASR and ALOC values:</p>
+    <p data-condition="Others:Wireless"> </p>
+    <div align="left" data-condition="Others:Wireless">
+      <table border="0" cellspacing="0" style="width:432.6px">
+        <colgroup xmlns="">
+          <col style="width:91.93333333333333333333333333px" />
+          <col style="width:91.93333333333333333333333333px" />
+          <col style="width:80.66666666666666666666666667px" />
+          <col style="width:168.06666666666666666666666667px" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <th>
+              <p class="TableRowTitle">CAPS</p>
+            </th>
+            <th>
+              <p class="TableRowTitle">ASR, %</p>
+            </th>
+            <th>
+              <p class="TableRowTitle">ALOC, sec</p>
+            </th>
+            <th>
+              <p class="TableRowTitle">Number of concurrent calls</p>
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <p class="TableParagrapgh">140</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">60</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">180</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">15,200</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="TableParagrapgh">140</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">60</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">90</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">7,560</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="TableParagrapgh">140</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">90</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">180</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">22,600</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless">The amount of monthly call traffic also depends on the ASR and ALOC values. Plus, we must consider the performance during peak, off-peak hours and extreme traffic splashes (e.g. during Christmas, Easter, etc.). Thus, the total performance capacity
+      must be greater than the maximum anticipated BHCA (busy hours call attempts).</p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless">Using the assumptions above (60% ASR and 3 minutes ALOC), we estimate that the number of minutes during peak hours is 140 * 60% *3* 3600 = 907,200 minutes.</p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless">The number of peak hours in a day highly depends on the customer types. For example, the number of peak hours for residential users is 2-4 hours while for business customers (e.g. call centers) it is 6 hours.</p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless">If to assume that there are 6 peak hours in a day, this results into 907,200 * 6 = 5,443,200 minutes of peak traffic per day. Assuming that a month consists of 20 business days, we have 5,443,200 * 20 = 108,864,000 minutes of monthly traffic.</p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless">Thus, to be on the safe side and allow for some reserve capacity, PortaBilling® is estimated to handle 100 million minutes per month.</p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless"><img alt="Attention" height="26" src="../assets/images/PortaBilling_Admin_Guide_MR82_files/Attention.gif" style="cursor: nwse-resize;" width="29" /> The results are calculated based on the maximum server’s capacity, which is 140 CAPS. However, we
+      strongly advise you to reserve some capacity of the billing server when you plan your infrastructure. This is required to handle traffic splashes and the traffic increase when your business grows.</p>
+    <p data-condition="Others:Wireless"> </p>
+    <h4 data-condition="Others:Wireless">SMS</h4>
+    <p data-condition="Others:Wireless">Unlike calls, which last for some time, an SMS is a one-time event. Thus, a single Diameter request is generated for an SMS. PortaBilling can process about 200 SMS per second, which means that every second 200 users can send an SMS on your network.
+      Assuming that 95% of all SMSs are successfully delivered, this results in 190 SMS per second.</p>
+    <h4 data-condition="Others:Wireless">Internet sessions</h4>
+    <p data-condition="Others:Wireless">An Internet session can last for a long period (e.g. for hours) without interruption. The service consumption is reported in session update (re-authorization) requests. Therefore, the number of authorization and re-authorization requests (transactions)
+      received during the session is considered when measuring PortaBilling®’s performance.</p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless">The frequency of requests from P-GW to PortaBilling® depends on how quickly a user consumes the amount of data allocated for a session during authorization. The allocated data has a validity time; thus, P-GW also sends a re-authorization request after
+      the validity time expires.</p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless">A single PortaBilling server with 32 active processing engines can process about 150 TPS (transactions per second). This means that every second 150 users’ Internet sessions can be started or updated. The exact figures highly depend on your billing
+      configuration (whether you provide capped or uncapped Internet service, whether you divide Internet traffic into rating groups), your overdraft protection settings (how many funds to lock for a session) and how quickly users consume the allocated
+      data. Since it is not possible to know which service configuration you use, we can only estimate PortaBilling®’s processing speed, which has been calculated as 150 transactions per second.</p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless">How many concurrent Internet sessions this translates to? This again depends on the frequency of requests sent by P-GW, the validity time and the percentage of simultaneously connected users. Given the processing speed of 150 TPS and assuming that
+      90% of all requests are successfully processed, this means that 150 TPS * 90% = 135 user sessions are in a “connected” state. Depending on the validity time, the number of simultaneous sessions changes as shown in the table below:</p>
+    <p data-condition="Others:Wireless"> </p>
+    <div align="left" data-condition="Others:Wireless">
+      <table border="0" cellspacing="0" style="width:460.9px">
+        <colgroup xmlns="">
+          <col style="width:171.06666666666666666666666667px" />
+          <col style="width:110.33333333333333333333333333px" />
+          <col style="width:179.53333333333333333333333333px" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <th>
+              <p class="TableRowTitle">Number of connected sessions</p>
+            </th>
+            <th>
+              <p class="TableRowTitle">Validity time, s</p>
+            </th>
+            <th>
+              <p class="TableRowTitle">Number of concurrent sessions</p>
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <p class="TableParagrapgh">135</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">1800</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">135 * 1800 = 243,000</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="TableParagrapgh">135</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">600</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">135 * 600 = 81,000</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless"> </p>
+    <p data-condition="Others:Wireless">The results are calculated based on the maximum server’s capacity, which is 150 TPS. However, we strongly advise you to reserve some capacity of the billing server when you plan your infrastructure. This is required to handle the traffic increase
+      when your business grows.</p>
+    <h3>Dedicated database server</h3>
+    <p>In the recommended installation configuration for PortaBilling® the application servers are separated from the database for enhanced performance. The extra processing power and increased database in-memory cache on the dedicated server dramatically
+      reduce the time required to execute many database queries.</p>
+    <p><img alt="dedicated db" src="../assets/images/dedicated Db server_DONE.png" /></p>
+    <h3>Hardware considerations</h3>
+    <p>The PortaBilling® billing engine uses multiple processors (or multiple CPU cores) in your server to process several requests in parallel, thus boosting performance – so adding another CPU or using quad-core CPU instead of dual-core provides a significant
+      increase in performance.</p>
+    <p>The amount of RAM is also very important, especially on database servers, while on a system with heavy load the disk subsystem becomes the component which determines the actual performance. Thus fast disk drives (15K rpm) and RAID controllers with
+      adequate caching (for both read and write operations) are recommended.</p>
+  </div>
+</body>
+</html>

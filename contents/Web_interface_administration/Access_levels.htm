@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" />
+  <title>Access levels</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <meta http-equiv="Content-Language" content="en-UK" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <meta name="condition-tags" content="Others:VoIP" />
+</head>
+<body>
+  <h2>Access levels</h2>
+  <h3>Introduction to the ACL system</h3>
+  <p>Different types of users have different responsibilities within the billing system. Some users may not be allowed to use or see certain portions of the system. To this end, PortaBilling® supports the concept of Access Control Lists (ACL). ACLs allow the PortaBilling® administrator to decide, for example, that a particular sales representative can look at customers’ data, but cannot create new customers.</p>
+  <p> </p>
+  <p>ACLs allow you to control what users of your site can and cannot do. Without such restrictions, it is almost impossible to guarantee that users will see or change only the information that they are allowed to.</p>
+  <p> </p>
+  <p>There are default ACLs defined in the PortaBilling® system. You can use default ACLs or create new ones to fit your needs.</p>
+  <h3>ACL types</h3>
+  <p>An access level can be of the following types:</p>
+  <ul>
+    <li>
+      <p class="List">Account (to be applied to your account)</p>
+    </li>
+    <li>
+      <p class="List">CC Staff (to be applied to your customer care support)</p>
+    </li>
+    <li>
+      <p class="List">Component (cannot be assigned to users; used only as a building block to construct other access levels)</p>
+    </li>
+    <li>
+      <p class="List">Customer (to be applied to retail customers or subcustomers)</p>
+    </li>
+    <li>
+      <p class="List">Distributor (to be applied to your distributor)</p>
+    </li>
+    <li>
+      <p class="List">Representative (to be applied to your representative)</p>
+    </li>
+    <li>
+      <p class="List">Reseller (to be applied to your resellers)</p>
+    </li>
+    <li>
+      <p class="List">User (access level for users of the admin interface)</p>
+    </li>
+    <li>
+      <p class="List">Vendor (to be applied to your vendors)</p>
+    </li>
+  </ul>
+  <p> </p>
+  <p>These access levels are composed of <strong>permissions </strong>and, optionally, other <strong>components (as dependencies)</strong>. Permission is a basic unit in the ACL system.</p>
+  <p> </p>
+  <p>Newly created ACLs will be available in the <strong>Access Level</strong> select menu of the corresponding form when creating a new object or modifying an existing object’s details. For instance, a User ACL will appear in the <strong>Access Level</strong> select menu of the <strong>Add User</strong> form (see below), a Customer ACL will be available when creating or editing a customer, and so on.</p>
+  <p> </p>
+  <p><img alt="Add user ACL" height="442.3" src="../assets/images/PortaBilling_Admin_Guide_MR82_files/Add_user.png" width="1015.9" /></p>
+  <h3>ACLs’ Visibility under reseller</h3>
+  <p>Normally you would not want reseller A to be able to use ACLs, which were designed for reseller B. To ensure that this never happens, ACLs are not visible to resellers by default. To allow a certain reseller to use the ACL, include this reseller in the ACL’s Visible To tab:</p>
+  <p> </p>
+  <p><img alt="ACL for Reseller" height="442.3" src="../assets/images/PortaBilling_Admin_Guide_MR82_files/ACLRes.png" width="1015.9" /></p>
+  <p> </p>
+  <p>Visibility can be applied for customers’, accounts’, representatives’ and CC staff’s ACLs.</p>
+  <h3>Components</h3>
+  <p>As was mentioned before the system includes a set of default ACLs that consists of components. These are used as a building block for constructing other access levels. Components will be made up of zero or more permissions, and can include other components (as dependencies). If access level ACLX includes access levels ACL1, ACL2 and ACL3 (or, in other words, is derived from ACL1, ACL2 and ACL3), then ACLX will contain all the permissions defined in ACL1, ACL2 and ACL3 (along with all of the access levels they in turn are derived from).</p>
+  <p> </p>
+  <p>What happens if there is a contradiction; for example, if ACL1 denies read access to Accounts.password and ACL2 grants it? In such a case, the first available definition will be used. Thus, in the example above, access will be denied according to ACL1, which is first in the list of included access levels. Keep in mind that the sequence of ACLs matching is held top-down. In addition to these, a component has several other aspects.</p>
+  <p> </p>
+  <p>When editing a component, you will first see a page as on the following screenshot:</p>
+  <p> </p>
+  <p><img alt="Edit ACL" src="../assets/images/PortaBilling_Admin_Guide_MR82_files/ACLEdit.png" /></p>
+  <p> </p>
+  <p>Including components as dependencies within other components gives the system its power. Here we see that the “Admin access” level is defined by over a dozen dependent components. Note that this component does not actually define permission itself, but rather relies on the implementation of its dependents.</p>
+  <p> </p>
+  <p>By deriving new components from the existing ones in the system, you can implement fine-grain access control and define User ACLs specific to your operational environment.</p>
+  <h3>Permissions</h3>
+  <p>Permission is the fundamental unit of exchange in the PortaBilling® security model. Permissions are composed of an access type, Allow / Deny permission (whether or not this is an allowed action), the relevant object, and the relative attribute of the object. To browse the permissions available for a certain page on the web interface, click the <img alt="WorCB6B" height="12.8" src="../assets/images/PortaBilling_Admin_Guide_MR82_files/image263.png" width="16.8" /> <strong>Objects</strong> icon.</p>
+  <p> </p>
+  <p class="redNote"><strong>NOTE</strong>: The <img alt="WorCB6B" height="12.8" src="../assets/images/PortaBilling_Admin_Guide_MR82_files/image264.png" width="16.8" /> <strong>Objects </strong>icon is available for <strong>Root </strong>users only.</p>
+  <p>Let’s take the example. An access level called “Access to ‘ASR’ reports” is provided within the PortaBilling® installation. It defines only one permission, which appears as in the following screenshot:</p>
+  <p> </p>
+  <p><img src="../assets/images/AdmACLEditComponents.png" /></p>
+  <p> </p>
+  <p>The “Access type” is set to “Read,” and the permission to “Allow.” This permission applies only to “WebForms” objects which have the attribute “ASR.”</p>
+  <p> </p>
+  <p>There are four possible access types:</p>
+  <ul>
+    <li>
+      <p class="List"><strong>Read </strong>– View the specified resource.</p>
+    </li>
+    <li>
+      <p class="List"><strong>Update </strong>– Modify the resource.</p>
+    </li>
+    <li>
+      <p class="List"><strong>Insert </strong>– Create new instances of the resource type.</p>
+    </li>
+    <li>
+      <p class="List">Delete – Remove instances of the resource from the system.</p>
+    </li>
+  </ul>
+  <p> </p>
+  <p>The <strong>Allow/Deny</strong> field defines whether this permission has been granted or withheld.</p>
+  <p> </p>
+  <p>You should never have to provide fine-grain permission information yourself, as all possible permissions are already encapsulated in the components of your PortaBilling® installation. For this reason, we will not discuss the “Object” and “Attribute” fields further in this section. However, it may be useful to know that wildcards can be used in these fields. For example, to allow Read access to all web pages, an ACL could be defined with the following permissions:</p>
+  <ul>
+    <li> </li>
+    <li>
+      <p class="List"><strong>Access type</strong> – “Read”.</p>
+    </li>
+    <li>
+      <p class="List"><strong>Allow/Deny</strong> – “Allow”.</p>
+    </li>
+    <li>
+      <p class="List"><strong>Object </strong>– “WebForms”.</p>
+    </li>
+    <li>
+      <p class="List"><strong>Attribute </strong>– “*”.</p>
+    </li>
+  </ul>
+  <p> </p>
+  <p>As may be guessed, the “*” in the Attribute field means “all attributes.”</p>
+  <p class="redNote"><strong>NOTE</strong>: Should you find it necessary to create new components, please contact PortaOne Support. We can provide you with a list of Object and Attribute resources, or otherwise assist you in maintaining ACLs.</p>
+  <h3>Access level management interface</h3>
+  <p>In this discussion of the ACL system, we have proceeded by starting with the fundamentals and building up your skills from there. Now we will discuss the entry point for ACL management. On the PortaBilling® admin interface you will find a link to “Access Levels.” This link takes you to the Access Level Management main page.</p>
+  <p> </p>
+  <p>This page is similar to many others in the PortaBilling® system, including a search interface at the top and a results listing at the bottom. You may search for ACLs using any combination of Name and Type.</p>
+  <p> </p>
+  <p>In the results listing, you may also see the <img alt="depen" height="20.0" src="../assets/images/PortaBilling_Admin_Guide_MR82_files/image265.png" width="24.0" /> <strong>Dependencies </strong>icon and the <img alt="delete" height="21.0" src="../assets/images/PortaBilling_Admin_Guide_MR82_files/image266.png" width="29.0" /><strong>Delete </strong>icon. ACLs can only be deleted when they are not in use. If a component contains any included components, you will be able to click on the dependencies and see search results for all dependents. The following screenshot shows all dependents for “Accounts full access.” Note that some of the dependents have their own dependencies.</p>
+  <p> </p>
+  <h3><img alt="components" src="../assets/images/AdmAccessLevels0010.gif" /></h3>
+  <h3><img src="../assets/images/AdmAccessLevels0020.gif" style="cursor: nesw-resize;" /></h3>
+  <h3>Add / edit a new user ACL</h3>
+  <p>From time to time you will find that the PortaBilling® predefined user ACLs (Admin, Helpdesk, and so on) offer too few, or too many, restrictions for a particular class of user. In such a case, it is time to create a new user ACL.</p>
+  <p> </p>
+  <p>The easiest method is to take an existing access level and create a new one modeled on it, and then modify it to fit your needs. You should examine the permissions granted to the model access level, and verify that you want to grant access to those resources.</p>
+  <p> </p>
+  <p>Next, you can include other components to suit your needs. As a style recommendation, we suggest that you first create a component containing the dependent components you wish to utilize.</p>
+  <p> </p>
+  <p>Finally, create a new user ACL which includes only this new component. Now you can assign this ACL to new users.</p>
+  <ol>
+    <li>
+      <p class="List">On the Access Level Management page, click <strong>Add</strong>.</p>
+    </li>
+    <li>
+      <p class="List">On the <strong>New Access Level</strong> page, specify the following information:</p>
+      <ul>
+        <li>
+          <p class="List"><strong>Name </strong>– Type the custom name for this ACL.</p>
+        </li>
+        <li>
+          <p class="List"><strong>Type </strong>– Select the entity this ACL is applicable for.</p>
+        </li>
+        <li>
+          <p class="List">On the <strong>Components </strong>tab, define which components will be included in this ACL and in which order by using the Include, Remove, Up and Down buttons.</p>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p class="List">Click <strong>Save</strong>.</p>
+    </li>
+    <li>
+      <p class="List">If required, on the <strong>Object/Attribute Permissions</strong> tab, define any additional permissions for this ACL.</p>
+    </li>
+    <li>
+      <p class="List">Click <strong>Save</strong>.</p>
+    </li>
+  </ol>
+  <p> </p>
+  <p>The PortaBilling® ACL management system contains style conventions which you would be well-advised to follow:</p>
+  <ul data-start="432" xmlns="">
+    <li>
+      <p class="List">The name of a component should be descriptive, based on the actions which it allows (for example, “Delete a node,” “Currencies read-only,” and “Access to Vendor Reports”).</p>
+    </li>
+    <li>
+      <p class="List">By convention, when defining a new user ACL (for example, “DemoUser”), we append “access” to the name of a component (“DemoUser access”) that includes dependent components.</p>
+    </li>
+  </ul>
+  <h4>Components tab</h4>
+  <p>We have already talked about the necessary parameters for creating or editing components, but we have not yet discussed component inclusion in detail.</p>
+  <p> </p>
+  <p>Each access level may have zero or more dependent components. These components are ordered, and likewise are applied in order until the first matching permission is reached. Keep in mind that the sequence of components matching is held top-down as shown on the screenshot:</p>
+  <p> </p>
+  <p><img src="../assets/images/components.png" /></p>
+  <p> </p>
+  <p><img src="../assets/images/PortaBilling_Admin_Guide_MR82_files/Attention.gif" /> In order to understand this better, we will use the previous example. Suppose a user is trying to view ASR reports. His access level must allow reading of “WebForms.ASR” (object “WebForms,” attribute “ASR”). For the sake of simplicity, we will say that his access level includes “A,” “B,” and “C,” where “B” allows this permission, but “C” explicitly denies it. In this case, the user’s ability to view these reports is based on the ordering of these components. If “B” appears before “C,” then it will work. In the opposite case, he will not have access.</p>
+  <p> </p>
+  <p>This may sound complex, but in practice the user interface is quite simple. Two columns are shown on the <strong>Components </strong>tab of the edit page for each access level. On the left, you have a list of the available components, while on the right are the included components. Between these two columns you have the <strong>Include-&gt;</strong> and <strong>&lt;-Remove</strong> buttons, which move selected items between the two lists. As for ordering, the <strong>Up </strong>and <strong>Down </strong>buttons on the far right-hand side of the page allow you to rearrange selected elements of the <strong>Included </strong>column.</p>
+  <p> </p>
+  <p>You should now have the skills necessary to implement the PortaBilling® security model and customize it to suit your business environment.</p>
+</body>
+</html>

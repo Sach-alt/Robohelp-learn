@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" />
+  <title>Components</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+</head>
+<body>
+  <div>
+    <h2>Components</h2>
+    <p><img alt="PortaBilling components" src="../assets/images/PB_Components.png" /></p>
+    <p> </p>
+    <p>PortaBilling® consists of four main logical components: the main database server (lower left), the billing (online charging) server (upper left), the admin/web and replica database server (bottom right), and the configuration/log collector server
+      (upper right). Typically, the billing, web and two database servers are installed on three separate physical computers so as to provide data redundancy and load sharing. Although a “shared” combination (where some servers, e.g. billing engine and
+      main database run on a single physical computer) is also possible and supported, this is recommended only for evaluation or demo systems.</p>
+    <p> </p>
+    <p><img alt="Components" height="549.1" src="../assets/images/image6.png" width="740.5" /></p>
+    <p> </p>
+    <p>The Configuration server must always reside on a separate physical server. It alters the software configuration and version of the other servers, and must remain unaffected by the changes thus made. This allows a rollback to the previous stable version
+      of the configuration or software release.</p>
+    <h3>Online charging server (OCS)</h3>
+    <p>The OCS server hosts the billing engine which communicates with the nodes via the RADIUS protocol. It can also process Diameter requests that are received from nodes provisioned for services via the Diameter protocol.</p>
+    <p> </p>
+    <p>The billing engine provides:</p>
+    <ul>
+      <li>
+        <p class="Normal"><strong>Authentication </strong>– It tells the node whether the subscriber (identified by phone number, PIN, IP, or the like) is allowed to use a specific service (e.g. voice calls or wireless Internet access), and returns attributes such as current
+          balance.</p>
+      </li>
+      <li>
+        <p class="Normal"><strong>Authorization </strong>– It tells the node whether the subscriber (identified by phone number, PIN, IP, or the like) is allowed to initiate a session with specific parameters within a service (e.g. calling a particular phone number), and
+          returns session attributes such as the maximum allowed session duration or the allowed amount of bandwidth.</p>
+      </li>
+      <li>
+        <p class="Normal"><strong>Interim (also called keep-alive) accounting processing </strong>– This is used for services like Internet access, when nodes constantly update the billing about usage for the current session.</p>
+      </li>
+      <li>
+        <p class="Normal"><strong>Accounting processing</strong> – Based on information from the gateways, it bills the session and writes transaction records to the database.</p>
+      </li>
+    </ul>
+    <h3>Main database server</h3>
+    <p>The main database server hosts the primary copy of the database. This database is used for all real-time data access (e.g. during account authentication) and for all data modifications.</p>
+    <h3>Web and replica database server</h3>
+    <h4>Web server</h4>
+    <p>The web server hosts the following:</p>
+    <ul>
+      <li>
+        <p class="List">Web interface, consisting of:</p>
+        <ul>
+          <li>
+            <p class="List">Admin interface.</p>
+          </li>
+          <li>
+            <p class="List">Account self-care.</p>
+          </li>
+          <li>
+            <p class="List">Customer self-care.</p>
+          </li>
+          <li>
+            <p class="List">Reseller’s helpdesk (self-care; customer care).</p>
+          </li>
+          <li>
+            <p class="List">Distributor self-care.</p>
+          </li>
+          <li>
+            <p class="List">Vendor self-care.</p>
+          </li>
+          <li>
+            <p class="List">Representative self-care.</p>
+          </li>
+          <li>
+            <p class="List">Online web signup interface.</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <p class="List"> </p>
+    <ul data-start="24" xmlns="">
+      <li>
+        <p class="List">Scripts for generating invoices, calculating various statistics and producing reports.</p>
+      </li>
+      <li>
+        <p class="List">Optional IVR (TFTP) server.</p>
+      </li>
+      <li>
+        <p class="List">XML API (SOAP) interface for integration with external applications.</p>
+      </li>
+    </ul>
+    <h4>Replica database server</h4>
+    <p>The replica database server hosts the second copy of the database. This database is used for all data mining activities (e.g. calculating a summary for the invoice or producing reports) and can be used to restore billing data in the event that the
+      main database is lost.</p>
+    <h3>Configuration server</h3>
+    <p>This server stores the information about all the other servers in the installation plus service configuration details about each of them. See more details about the configuration management framework in the Centralized Configuration Management chapter
+      of the <a href="http://www.portaone.com/documentation">PortaSwitch Architecture and Concepts</a> guide.</p>
+    <p> </p>
+    <p>The Configuration server monitors the status of all the other servers. Data such as available disk space, load, or service status can be viewed via the web interface. If a problem is detected, the PortaOne support team will be notified immediately.</p>
+    <p> </p>
+    <p>The Configuration server also collects log data, such as SIP communication logs from PortaSIP®, or billing engine logs from billing nodes. These are then stored, processed and indexed, so that all entries relating to a particular session can be retrieved
+      instantly. This reduces the amount of disk space needed on the production servers, as well as the load on them.</p>
+    <p> </p>
+    <p>Log data for the most recent time period is kept in the original format. Older data is archived to save disk space, while log files which are outdated are erased.</p>
+  </div>
+</body>
+</html>

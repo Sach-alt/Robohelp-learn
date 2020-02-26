@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preset>
+  <content>
+    <conditional>
+      <path>../expressions/VoIP_content.expn</path>
+    </conditional>
+    <toc>
+      <path>../../toc/Default.toc</path>
+      <name>Default</name>
+    </toc>
+    <index type="boolean">false</index>
+    <brs type="array"></brs>
+    <language>
+      <code type="number">1033</code>
+      <displayName>English (US)</displayName>
+      <name>en_US</name>
+    </language>
+    <masterpage>
+      <path>../../contents/assets/masterpages/PDF_for_VOIP.htt</path>
+    </masterpage>
+    <mapFiles type="array"></mapFiles>
+    <generatetoc type="boolean">true</generatetoc>
+    <includereftopics type="boolean">true</includereftopics>
+    <includeExpandingText type="boolean">false</includeExpandingText>
+    <includeDropdownText type="boolean">false</includeDropdownText>
+  </content>
+  <title>PB VOIP Guide</title>
+  <type>pdf</type>
+  <outputPath>D:/RH test/RH2019 test outputs/PDF/</outputPath>
+  <name>PDF for VOIP</name>
+  <starterPage>PB VOIP Guide.pdf</starterPage>
+  <defaultTopic>
+    <name>PortaBilling_Administrator_Guide</name>
+    <path>../../contents/PortaBilling_Administrator_Guide/PortaBilling_Administrator_Guide.htm</path>
+  </defaultTopic>
+  <search>
+    <context type="boolean">false</context>
+    <contextLimit></contextLimit>
+    <showSpeclChars type="boolean">false</showSpeclChars>
+    <speclChars>0;1;2;3;4;5;6;7;8;9</speclChars>
+  </search>
+  <sitemap>
+    <use type="boolean">false</use>
+    <helpBaseURL></helpBaseURL>
+    <changeFrequency></changeFrequency>
+  </sitemap>
+  <patchHomepage type="boolean">true</patchHomepage>
+  <gdprCompliance type="boolean">true</gdprCompliance>
+  <pdf>
+    <downloadTimeout type="number">200</downloadTimeout>
+    <margin type="array">
+      <marginitem type="number">15</marginitem>
+      <marginitem type="number">25</marginitem>
+      <marginitem type="number">21</marginitem>
+      <marginitem></marginitem>
+    </margin>
+    <multiheaders type="boolean">true</multiheaders>
+    <headerspace type="number">2</headerspace>
+    <footerspace type="number">2</footerspace>
+    <tocmasterpages>
+      <first>../../contents/assets/masterpages/PDF_for_VOIP.htt</first>
+      <even>../../contents/assets/masterpages/PDF_for_VOIP.htt</even>
+      <odd>../../contents/assets/masterpages/PDF_for_VOIP.htt</odd>
+      <common type="boolean">true</common>
+    </tocmasterpages>
+    <topicmasterpages>
+      <first>../../contents/assets/masterpages/PDF_for_VOIP.htt</first>
+      <even>../../contents/assets/masterpages/PDF_for_VOIP.htt</even>
+      <odd>../../contents/assets/masterpages/PDF_for_VOIP.htt</odd>
+      <common type="boolean">true</common>
+    </topicmasterpages>
+  </pdf>
+</preset>

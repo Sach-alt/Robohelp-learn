@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hardware and software requirements</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" />
+  <link rel="stylesheet" href="../assets/css/Copyright notice.css" />
+</head>
+<body>
+  <div>
+    <h2>Hardware and software <span>requirements</span></h2>
+    <h3>Server system recommendations</h3>
+    <ul>
+      <li>
+        <p class="List">Four (4) Linux Servers for the PortaBilling®:</p>
+        <ul>
+          <li>
+            <p class="List">Real-time billing engine (RADIUS).</p>
+          </li>
+          <li>
+            <p class="List">Main database server.</p>
+          </li>
+          <li>
+            <p class="List">Server for web-interfaces (web interface for administrators and self-care portal, XML API services, periodic tasks, invoicing) and replica database.</p>
+          </li>
+          <li>
+            <p class="List">Configuration management (this server is also used for monitoring the other servers and collecting and processing log information).</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <p class="List"> </p>
+    <ul data-start="4" xmlns="">
+      <li>
+        <p class="List">A minimum of 250 GB of available disk space on each billing server. On the average, 200,000 CDRs take up about 1 GB of disk space (this includes database files, indexes and binary logs, raw RADIUS detail files, billing engine log files and other
+          related information), plus you need to reserve an amount of free space roughly equal to the projected database size for performing operations such as backup. RAID is recommended in order to improve performance and reliability.</p>
+        <p class="List"> </p>
+        <p>The Configuration server requires about 500 GB of free disk space if you are using PortaSwitch® (where log files from the PortaSIP® dispatching and processing nodes need to be processed), and 250 GB of free disk space if you are using the PortaBilling®
+          standalone.</p>
+      </li>
+      <li>
+        <p class="List">A 64-bit processor (Xeon, Opteron).</p>
+      </li>
+      <li>
+        <p class="List">At least 8 GB of RAM, 16 GB recommended.</p>
+      </li>
+    </ul>
+    <p class="List">Two Gigabit network ports (can be two separate network adapters or a single dual-port adapter).</p>
+    <p> </p>
+    <p>For additional details and configuration advice, see the Hardware</p>
+    <p>Recommendations topic on our website:</p>
+    <p> </p>
+    <p><a href="http://www.portaone.com/support/hw-requirements/">http://www.portaone.com/support/hw-requirements/</a></p>
+    <p> </p>
+    <p>For information about whether particular hardware is supported by Oracle Enterprise Linux used as the operating system in PortaSwitch®, consult the related document on the Oracle or RedHat website: <a href="https://hardware.redhat.com/">https://hardware.redhat.com/</a>.</p>
+    <h3>Client system recommendations</h3>
+    <ul>
+      <li>
+        <p class="List"><strong>OS</strong>: MS Windows 7 or above, Linux/BSD, macOS Sierra (version 10.12) or above.</p>
+      </li>
+      <li>
+        <p class="List"><strong>Web browser</strong>:</p>
+        <ul>
+          <li>
+            <p class="List">Google Chrome 76 or above, Chromium 76 or above, Mozilla Firefox 68 or above.</p>
+          </li>
+          <li>
+            <p class="List">JavaScript and cookies must be enabled.</p>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p class="List"><strong>Spreadsheet processor:</strong> MS Excel, OpenOffice Calc, LibreOffice Calc, Google Sheets.</p>
+      </li>
+      <li>
+        <p class="List"><strong>Display settings</strong>: a minimum screen resolution of 1366 × 768.</p>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+/*Created with Adobe RoboHelp 2019*/
+/*TOC Styling*/
+body.pdf-toc-body {}
+h1.pdf-toc-title {
+  font-family: 'Arial Black';
+  font-size: 11pt;
+  color: #2E5890;
+  margin-top: 1pt;
+  margin-right: 1px;
+  margin-bottom: 6pt;
+  font-style: normal;
+  text-align: left
+}
+p.pdf-toc {
+  font-family: Roboto;
+  font-size: 12pt;
+  margin-top: 1pt;
+  margin-left: 0px;
+  font-style: normal
+}
+a.pdf-toc-link {
+  font-family: Roboto;
+  font-size: 9.96pt
+}
+a.pdf-toc-link:after {}
+span.pdf-toc-page-no {
+  font-family: Garamond;
+  font-size: 11px;
+  font-weight: bold
+}
+p.pdf-toc-level1 {
+  font-family: Roboto;
+  font-size: 12pt
+}
+a.pdf-toc-link-level1 {
+  font-family: Roboto;
+  font-size: 11pt;
+  line-height: 1.15;
+  letter-spacing: 0.01pt;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em
+}
+span.page-number {
+  font-family: 'Eurostile CE Condensed';
+  font-size: 12px;
+  color: #808080;
+  text-align: right;
+  margin-right: 0px
+}
+p.header {
+  font-family: 'Eurostile CE Condensed';
+  font-size: 13pt;
+  color: #808080;
+  text-align: left;
+  padding-bottom: 1pt;
+  margin-left: 0pt
+}
+p.footer {
+  font-family: 'Eurostile CE Condensed';
+  font-size: 9pt;
+  color: #808080;
+  line-height: 1.15;
+  padding-top: 1em;
+  margin-left: 0pt
+}
+table.footer {
+  border-width: 1px;
+  border-style: none;
+  border-color: transparent;
+  margin-left: 0px
+}
+th.footer {}
+tr.footer {}
+span.pdf-toc-page-no-level1 {}
+p.pdf-toc-level2 {
+  font-family: Tahoma;
+  font-size: 11pt
+}
+a.pdf-toc-link-level2 {}
+span.pdf-toc-page-no-level2 {
+  font-family: Garamond;
+  font-size: 10px
+}
+p.pdf-toc-level3 {}
+p.pdf-toc-level4 {}
+p.pdf-toc-level5 {}
+p.pdf-toc-level6 {}
+/*Index Styling*/
+body.pdf-idx-body {}
+h1.pdf-idx-title {}
+div.pdf-idx-unit {}
+p.pdf-idx-keyword {}
+div.pdf-idx-topics {}
+p.pdf-idx-topic {}
+a.pdf-idx-link {}
+div.pdf-idx-child {}
+/*Glossary Styling*/
+body.pdf-glo-body {}
+h1.pdf-glo-title {}
+div.pdf-glo-unit {}
+p.pdf-glo-term {}
+p.pdf-glo-definition {}
+table.footer td {
+  border-width: 1px;
+  border-style: none;
+  border-color: transparent
+}

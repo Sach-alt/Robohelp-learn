@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<preset>
+  
+<content>
+    
+<conditional>
+      
+<path>../expressions/Wireless.expn</path>
+    </conditional>
+    
+<toc>
+      
+<path>../../toc/PortaBilling_Admin_Guide_Wireless.toc</path>
+    </toc>
+    
+<index type="boolean">false</index>
+    
+<brs type="array"></brs>
+    
+<language>
+      
+<name>en_US</name>
+      
+<code type="number">1033</code>
+      
+<displayName>English (US)</displayName>
+    </language>
+    
+<masterpage>
+      
+<path>../../contents/assets/masterpages/PDF_for_VOIP.htt</path>
+    </masterpage>
+    
+<mapFiles type="array"></mapFiles>
+    
+<generatetoc type="boolean">true</generatetoc>
+    
+<includereftopics type="boolean">true</includereftopics>
+    
+<includeExpandingText type="boolean">false</includeExpandingText>
+    
+<includeDropdownText type="boolean">false</includeDropdownText>
+  </content>
+  
+<title>Wireless Guide</title>
+  
+<type>pdf</type>
+  
+<outputPath>C:/Users/nastena/Documents/My RoboHelp Projects/outputs/PB Admin Guide/PDF</outputPath>
+  
+<name>PDF</name>
+  
+<starterPage>Default.pdf</starterPage>
+  
+<defaultTopic>
+    
+<name>PortaBilling_Admin_Guide.htm</name>
+    
+<path>../../contents/PortaBilling_Administrator_Guide/PortaBilling_Admin_Guide.htm</path>
+  </defaultTopic>
+  
+<search>
+    
+<context type="boolean">false</context>
+    
+<contextLimit></contextLimit>
+    
+<showSpeclChars type="boolean">false</showSpeclChars>
+    
+<speclChars>0;1;2;3;4;5;6;7;8;9</speclChars>
+  </search>
+  
+<sitemap>
+    
+<use type="boolean">false</use>
+    
+<helpBaseURL></helpBaseURL>
+    
+<changeFrequency></changeFrequency>
+  </sitemap>
+  
+<patchHomepage type="boolean">true</patchHomepage>
+  
+<gdprCompliance type="boolean">true</gdprCompliance>
+  
+<pdf>
+    
+<downloadTimeout type="number">200</downloadTimeout>
+    
+<margin type="array">
+      
+<marginitem type="number">15</marginitem>
+      
+<marginitem type="number">15</marginitem>
+      
+<marginitem type="number">15</marginitem>
+      
+<marginitem type="number">15</marginitem>
+    </margin>
+    
+<multiheaders type="boolean">false</multiheaders>
+  </pdf>
+</preset>

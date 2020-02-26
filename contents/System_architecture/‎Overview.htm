@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" />
+  <title>Overview</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" />
+</head>
+<body>
+  <div>
+    <h1>System architecture</h1>
+    <h2>Overview</h2>
+    <p>PortaBilling® is a carrier-grade converged billing / provisioning system for communication service providers. It communicates with <span data-condition="Others:VoIP">elements of your network</span><span data-condition="Others:Wireless">network core components</span>      (such as<span data-condition="Others:VoIP"> VoIP gateways or WiFi/</span><span data-condition="Others:VoIP">DSL</span><span data-condition="Others:VoIP"> access points</span><span data-condition="Others:Wireless"> HSS</span><span data-condition="Others:Wireless">, P-GW, IMS</span>),
+      provides these nodes with authentication or authorization (determining whether a customer should be admitted and provided with a service), and gathers billing events, i.e. data about services rendered to your customers. Based on this information,
+      it performs rating for the services, creates transaction records (also called xDRs - eXtensible Detail Records), and modifies customers’ balances accordingly.</p>
+    <p> </p>
+    <p><img alt="PortaBilling" src="../assets/images/image3.png" /></p>
+    <p> </p>
+    <p>All this happens in real time, so the billing data is updated as soon as a session is completed (e.g. the customer hangs up his phone, or an SMS message has been sent). PortaBilling® provides a unified platform for multiple services, which allows
+      you to use it to charge clients for their voice calls, messages, and data transfer, thus effectively deploying triple-play on your network.</p>
+    <p> </p>
+    <p>PortaBilling® will act as the nerve center of your network. After you have entered information about your services, rates, customers and so on via the web interface, PortaBilling® will communicate in real time with elements of your network to supply
+      information regarding which customers the service should be provided to (and which not), as well as exactly how it should be provided. Customers whose balance has run out will be disconnected immediately after exceeding the maximum session duration
+      and (since billing happens in real time) funds will be withdrawn from their account and service denied if they make another attempt to use the service.</p>
+    <p> </p>
+    <p><img alt="PortaSwitch architecture diagramm
+" height="475.6" src="../assets/images/image4.png" width="461.5" /></p>
+    <p> </p>
+    <p>As shown in the diagram above, multiple types of network equipment can work in conjunction with PortaBilling®. The easiest and best method of integration is via the <span data-condition="Others:VoIP">RADIUS</span> <span data-condition="Others:Wireless">Diameter</span> protocol.
+      However, if a certain type of switch or server does not support <span data-condition="Others:VoIP"><span data-condition="Others:VoIP">RADIUS</span> <span data-condition="Others:Wireless">Diameter</span></span>, integration can be done by other means,
+      for instance XML API.</p>
+    <p> </p>
+  </div>
+</body>
+</html>

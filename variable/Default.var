@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  
+<map>
+    
+<title>Variables</title>
+  
+<keydef keys="Year">
+<topicmeta>
+<keywords>
+<keyword>2020</keyword></keywords></topicmeta></keydef>
+<keydef keys="ReleaseNumber">
+<topicmeta>
+<keywords>
+<keyword>83</keyword></keywords></topicmeta></keydef></map>

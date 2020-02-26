@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" />
+  <title>Products </title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" />
+  <link rel="stylesheet" href="../assets/css/PortaBilling_Admin_Guide_MR82.css" />
+</head>
+<body>
+  <div>
+    <h2>Products</h2>
+    <p>A product is a combination of services that you provide to a customer for a price. For instance, the same product may provide both wireless Internet access and cheap international phone calls from <span data-condition="Others:VoIP">an IP </span>phone.
+      <span data-condition="Others:VoIP">Or perhaps you will decide to sell calling cards with 6 cents/minute calls to China via a local access number in New York, and 8 cents/minute calls to China via a toll-free line. In this case, your product will include two types of service:</span></p>
+    <ul data-condition="Others:VoIP">
+      <li>
+        <p class="List">access via the local New York number, and</p>
+      </li>
+      <li>
+        <p class="List">access via the toll-free line,</p>
+      </li>
+    </ul>
+    <p data-condition="Others:VoIP">with price parameters associated with each service.</p>
+    <p data-condition="Others:VoIP"> </p>
+    <p data-condition="Others:VoIP"><img alt="Product structure" src="../assets/images/product_pic_DONE.png" /></p>
+    <p> </p>
+    <p>The rating table (available on the <strong>Usage charges</strong> panel) is the main component of a product definition. It specifies which services your customers have access to, where on your network they may use these services, and how they should
+      be charged for them. It allows you to specify the following parameters which define a service consumption point:</p>
+    <ul>
+      <li>
+        <p class="List">The type of service provided.</p>
+      </li>
+      <li>
+        <p class="List">The node on which the service is used. What exactly does “node” mean in this context? If, for example, a customer calls to gateway A, enters his PIN, and makes an outgoing call which is terminated on gateway B, is he using a service on node A,
+          node B, or both? The correct answer is that the service is regarded as having been provided at the point where authorization was performed. In this example, since PIN authorization is performed on node A, it is node A which must be listed in
+          the rating table.</p>
+      </li>
+      <li>
+        <p class="List">Identification of the access code (method) on that node. This parameter allows you to use different rate plans for the same service. For example, you may choose a rate plan according to the PSTN access number (local or toll-free) that the customer
+          has dialed. Or you may use different rate plans for outgoing, incoming and forwarded calls in your SIP calls service using the OUTGOING, INCOMING and FOLLOWME access codes, respectively. (While for services such as prepaid cards the access code
+          is a number, for other services any string may be used, so long as it is one provided by the application handling the call).</p>
+      </li>
+      <li>
+        <p class="List">Originating line information (this is applicable only to the voice call service). You can separate rating entries based on originating line information (e.g. whether the call was made from a home phone or a pay phone). Make sure your telecom provider
+          supplies you with this information in the call setup. For more information please refer to the <a href="../word_inport/Products.htm#_OLI-based_Billing_1">OLI-Based Billing</a> section of this guide.</p>
+        <p> </p>
+        <p>Below is an overview of the product bundling and rating possibilities offered by PortaBilling®. The MegaStar product allows customers to make and receive calls from phones, connect to a WiFi network and be charged for time spent online, and exchange
+          instant messages. You may assign a different rate plan for each service, as shown.</p>
+        <p> </p>
+        <p><img alt="Product bundle" height="222.7" src="../assets/images/PortaBilling_Admin_Guide_MR82_files/image16.png" width="461.5" /></p>
+        <h4 data-condition="Others:VoIP">Applying tariffs based on routing plans</h4>
+        <p data-condition="Others:VoIP">Normally, the customer is charged the price which is pre-set in his price list. Naturally, this price is calculated based on estimated average termination costs, but does not directly depend on which carrier is used for a specific call. Since
+          you may have different termination vendors with various prices and levels of audio quality, how can you give your customers the freedom to choose whether to make phone calls via low-cost carriers (and thus pay low rates), or use high-quality
+          carriers (and so pay premium rates)?</p>
+        <p data-condition="Others:VoIP"> </p>
+        <p data-condition="Others:VoIP">Routing plan selection is available for services based on the Voice Calls service type. It allows you to select a tariff for charging a customer based not only on the “incoming” point to your network, but also on the “outgoing” entry, i.e. the
+          type of route used to terminate a call.</p>
+        <p data-condition="Others:VoIP">Each type of routing (low-cost, premium, etc.) is defined as a separate routing plan, and multiple routing plans can now be associated with a single rating entry in the product definition. A specific tariff will be assigned to each routing plan,
+          and this tariff will be used when a customer subscribing to a specific plan places a call. For more details, see the <a href="../word_inport/Products.htm#_Routing_Plan_Selection">Routing Plan Selection</a> chapter.</p>
+        <p data-condition="Others:VoIP"> </p>
+        <p data-condition="Others:VoIP"><img alt="Tariff per routing plan" height="222.7" src="../assets/images/PortaBilling_Admin_Guide_MR82_files/image17.png" width="461.5" /></p>
+        <p data-condition="Others:VoIP"> </p>
+        <p data-condition="Others:VoIP">You can still use the “single tariff per rating entry” mode. Since this provides faster performance, it is a good idea to use it when the real-time selection of routing plans is not required. In this case, you can still assign a default routing
+          plan to an account, and this will be used when the end user makes a phone call.</p>
+        <p data-condition="Others:VoIP"> </p>
+        <p data-condition="Others:VoIP">“Single tariff” mode is active by default when you create a new rating entry. If you wish to apply a specific tariff based on the routing plan used, you have to manually select the “Assign Tariff per Routing Plan” option in Tariff list.</p>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

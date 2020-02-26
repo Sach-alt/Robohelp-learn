@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" />
+  <title>High availability</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" type="text/css" href="../assets/css/default.css" />
+  <meta http-equiv="Content-Language" content="en-US" />
+</head>
+<body>
+  <div>
+    <h2>High availability</h2>
+    <h3>PortaBilling® cluster</h3>
+    <p>In addition to the ability to run several <span><span data-condition="Others:VoIP">RADIUS</span><span data-condition="Others:Wireless">Diameter </span></span>processes in parallel on the same machine, you can also utilize multiple physical servers
+      to process <span><span data-condition="Others:VoIP">RADIUS</span><span data-condition="Others:Wireless">Diameter </span></span>requests. This provides extra performance, since incoming requests are distributed for processing among all the available
+      servers. It also offers you improved reliability, because if one of the servers is down due to hardware failure, the remaining servers will continue operating. <span><span data-condition="Others:VoIP">RADIUS</span><span data-condition="Others:Wireless">Diameter </span></span>cluster
+      technology is included in the PortaBilling® Oracularius and PortaSwitch® Procinctus products.</p>
+    <h4>Technical details</h4>
+    <p>Each server in the cluster runs two types of processes: dispatcher and processing engine. The dispatcher receives a <span><span data-condition="Others:VoIP">RADIUS</span><span data-condition="Others:Wireless">Diameter </span></span>request from the
+      network and sends it to one of the available processing engines. The actual business logic (e.g. checking whether it is a valid account/customer, calculating allowed session duration, or producing CDRs) is done by the processing engine. Normally
+      there is a single dispatcher and multiple processing engines on each physical server.</p>
+    <p> </p>
+    <p>One of the dispatchers is always active, while all the dispatchers constantly communicate and thus know which nodes in the cluster are alive. Should the server which runs the active dispatcher go down due to hardware failure, a new active dispatcher
+      will be selected. The active dispatcher places requests into queues for the processing engines, based on their availability and current load. When the processing of a request is finished (meaning that xDRs are inserted in the database, balances
+      are updated, etc.), the dispatcher receives confirmation from the processing engine and relays the response to the network node (this may be a simple accounting confirmation, or could include attributes such as “maximum authorized time”). If one
+      of the servers in the cluster goes down, all requests queued for processing engines on that server are processed by the remaining servers.</p>
+    <h4>Performance</h4>
+    <p>Since the load is distributed among all servers in the cluster, the total performance capacity grows linearly with adding more servers into the cluster. So if we add to a PortaBilling®, capable of 90 call attempts per second, another identical server
+      and connect these two into a cluster – the performance of this two node cluster will be about 180 call attempts per second and by adding a third node it can be increased to 270 call attempts per second.</p>
+    <h3>Using standby database for improved reliability</h3>
+    <p>For quick disaster recovery in case your main database server goes down (e.g. due to motherboard failure), PortaBilling® can be equipped with a standby database server. This server is identical to the main database server, with the same software installed.
+      The only difference is that during normal system operations the database runs in slave mode (with real-time replication), and so is fully synchronized with the main database.</p>
+    <p> </p>
+    <p><img alt="Stand-by DB" data-thumbnail="" height="422" src="../assets/images/Using Standby Database_172388_a DONE-docs-587-AA.png" width="300" /></p>
+    <p> </p>
+    <p>When the main database is unavailable, the standby database can be switched to the role of main database and assume all real-time data access and modifications.</p>
+    <p> </p>
+    <p><img alt="main DB down" src="../assets/images/Using Standby Database_172388_b DONE-docs-587-AA.png" width="300" /></p>
+    <p> </p>
+    <p>The standby server may be installed in the same co-location center (even in the same rack) as your main database server. This provides easy administration and, in case of a switch from main to standby database, the standby server is able to simply
+      take over the main server’s IP address. In such a case, the change is transparent for all elements of your network.</p>
+    <p> </p>
+    <p>However, should your co-location provider be having a problem with network connectivity, both servers will become inaccessible to your network installed elsewhere. This can be avoided by installing the standby database server and additional billing
+      server in a different physical location, connected to a different network (and preferably to a different ISP). This is so that even if the whole hosting center including your main database server is down, you can still continue network operations
+      via the servers at the remote location, as they will not be affected by the outage.</p>
+    <h3>Web cluster</h3>
+    <p>The purpose of a web cluster is to allow the uninterrupted processing of web requests from administrators, end users or external applications in case of hardware failure on a physical server. It also enables load sharing among multiple servers, which
+      allows the system to easily scale up to handle a higher total number of users who access the system via a web interface or external applications, or who access data via XML API.</p>
+    <p> </p>
+    <p>For outside users (or applications), the cluster is accessible via a single virtual IP address. For instance, if the cluster’s virtual IP is 1.2.3.4 and one or more domain names such as www.mycall.com are set to point to that IP, when a user types
+      “www.mysipcall.com,” his request is delivered to the cluster and then processed by one of the nodes there. The address to which all users and / or applications connect is always the same, so if any server is down, no reconfiguration is required
+      in external applications or via the end-user’s web browser.</p>
+    <p> </p>
+    <p><img alt="Web cluster" src="../assets/images/web_cluster_page22_173842_5_AZ_DONE.png" /></p>
+    <p> </p>
+    <p>All incoming sessions are distributed among available nodes by the load balancing application according to a predefined algorithm. The default algorithm is the “round robin,” according to which requests are sent to each of the instances in turn.</p>
+    <p> </p>
+    <p>The load balancer also monitors the state of web instances within the cluster. Whenever an instance is unavailable, the load balancer adjusts the request distribution. The load balancer is deployed on every web instance; however, it is only active
+      on the instance with the virtual IP address.</p>
+    <p> </p>
+    <p>The cluster starts with a minimum number of two servers. The number of web servers that can be added to the cluster is unlimited.</p>
+    <h4>IP aliasing</h4>
+    <p>SSL encryption is among the key requirements for websites. Encrypted sites provide a secure connection between the web server and the user, ensure the safety of user sensitive information (e.g. credentials, credit card data, etc.) and have higher
+      rankings among search engines. In order to maintain a secure website over SSL encryption, a dedicated IP address is required.</p>
+    <p> </p>
+    <p>Web cluster supports multiple IP addresses as aliases. This enables you to allocate dedicated IP addresses for your environment owners and resellers to build separate, encrypted websites.</p>
+    <p> </p>
+    <p><img alt="IP alias definition" height="260.5" src="../assets/images/image11.png" width="461.5" /></p>
+    <p> </p>
+    <p>With a dedicated IP address, your customers and resellers can:</p>
+    <ul data-start="29" xmlns="">
+      <li>
+        <p class="List">Create websites under their own domain names;</p>
+      </li>
+      <li>
+        <p class="List">Secure the user data transmission by using their own SSL certificates; and</p>
+      </li>
+      <li>
+        <p class="List">Protect their websites from being blacklisted by managing the firewall configuration.</p>
+      </li>
+    </ul>
+    <p class="List"> </p>
+    <p class="List">Thereby you organize white label operators to work independently. You also prevent network bottlenecks from occurring when a mass of traffic arrives at the same host and port.</p>
+    <h4><br/> ‎
+      <span> </span></h4>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+    <p> </p>
+  </div>
+</body>
+</html>

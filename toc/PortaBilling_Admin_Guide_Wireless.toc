@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+  <title>Table of Contents</title>
+  <book navtitle="PortaBilling Administrator Guide" format="html" processing-role="normal">
+    <page href="../contents/PortaBilling_Administrator_Guide/Copyright_notice.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/PortaBilling_Administrator_Guide/Preface.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/PortaBilling_Administrator_Guide/‎Hardware_and_software_requirements.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/PortaBilling_Administrator_Guide/Installation.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/PortaBilling_Administrator_Guide/What_is_new_in_maintenance_release_82.htm" format="html" processing-role="normal"></page>
+  </book>
+  <book navtitle="1. System architecture" format="html" processing-role="normal">
+    <page href="../contents/System_architecture/‎Overview.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/System_architecture/Components.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/System_architecture/PortaBilling_web_interface.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/System_architecture/PortaBilling_performance.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/System_architecture/High_availability.htm" format="html" processing-role="normal"></page>
+  </book>
+  <book navtitle="2. System concepts" format="html" processing-role="normal">
+    <page href="../contents/System_concepts/‎Overview_concepts.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/System_concepts/Service_types_and_services.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/System_concepts/Service_provisioning.htm" format="html" processing-role="normal"></page>
+    <page href="../contents/System_concepts/Products.htm" format="html" processing-role="normal"></page>
+  </book>
+  <book navtitle="Web interface administration" format="html" processing-role="normal"></book>
+</map>

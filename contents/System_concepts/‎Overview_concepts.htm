@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" />
+  <title>Overview</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" />
+</head>
+<body>
+  <div>
+    <h2>Overview</h2>
+    <h3>Converged billing</h3>
+    <p>PortaBilling® supports multiple services and service types. This means that as different types of services (e.g. voice calls, WiFi connectivity and messaging) are provided to your users, PortaBilling® collects data about all of them, processing and
+      rating it according to the billing configuration. It then provides your customers with a consolidated bill (and your administrators with a unified customer management interface).</p>
+    <h3>Billing events</h3>
+    <p>The main unit of billing information is a billing event – a notification that a service has been provided to a customer in the outside world, and that this customer should thus be charged for that service.</p>
+    <p> </p>
+    <p>For many services (such as SMS messaging), a single billing event is represented by a single notification message to billing, while for others information about one event (e.g. a completed phone call) is split into multiple notifications from different
+      network elements.</p>
+    <h3>Four entities involved in the billing</h3>
+    <p>Four separate entities will be billed for every event registered in the system:</p>
+    <ul>
+      <li>
+        <p class="List">Account (identified entity using the service).</p>
+      </li>
+      <li>
+        <p class="List">Customer (an account owner).</p>
+      </li>
+      <li>
+        <p class="List">Reseller (optional).</p>
+      </li>
+      <li>
+        <p class="List">Vendors (service providers, e.g. your termination partners or service providers for incoming telephony lines, both local and toll-free).</p>
+      </li>
+    </ul>
+    <p> </p>
+    <p>This allows you to:</p>
+    <ul>
+      <li>
+        <p class="List">Bill the end user (the owner of a prepaid calling card, phone number or office VoIP gateway).</p>
+      </li>
+      <li>
+        <p class="List">Bill the customer to whom the end user belongs.</p>
+      </li>
+      <li>
+        <p class="List">Bill the reseller who owns that customer (if applicable).</p>
+      </li>
+      <li>
+        <p class="List">Calculate your expenses for termination of this call to the vendor.</p>
+      </li>
+    </ul>
+    <h3>xDRs</h3>
+    <p>CDRs (Call Detail Records) were the real foundation of any legacy billing system, which had to receive, store and analyze them. Today, when most service providers are expanding their service portfolio, the CDR concept is either becoming inapplicable
+      to some of their services (e.g. selling pizza over the Internet), or it no longer fits their business model (e.g. providing bulk free calling minutes). PortaBilling® supports this by introducing the concept of xDRs – eXtensible Detail Records, which
+      can store information about various types of billing events. CDRs are, therefore, only a subset of all possible xDR instances. The same applies to EDR (Event Detail Records), data which describe a single event such as an SMS message; they too are
+      just a subset of xDR data, and can thus be easily processed by PortaBilling®.</p>
+    <p> </p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8" />
+  <title>Service types and services</title>
+  <meta name="generator" content="Adobe RoboHelp 2019" />
+  <link rel="stylesheet" href="../assets/css/default.css" />
+  <link rel="stylesheet" href="../assets/css/PortaBilling_Admin_Guide_MR82.css" />
+</head>
+<body>
+  <div>
+    <h2>Service types and services</h2>
+    <p>PortaBilling® enables you to offer multiple services to your customers, so you can broaden your range of services while providing clear transaction and invoice information to your subscribers and administrators.</p>
+    <p> </p>
+    <p>There are two entities involved in the billing configuration:</p>
+    <ul>
+      <li>
+        <p class="List">Service types</p>
+      </li>
+      <li>
+        <p class="List">Services</p>
+      </li>
+    </ul>
+    <p> </p>
+    <p><img alt="Service type" height="324.5" src="../assets/images/PortaBilling_Admin_Guide_MR82_files/image12.png" width="785.3" /></p>
+    <p> </p>
+    <p>A <strong>service typ</strong>e is a description of the physical service provided to an end user. A service type primarily defines the way in which the billing engine interacts with network equipment to ensure that the service is authorized, provided
+      and rated correctly. Voice calls or WiFi Internet access are examples of service types. The list of available service types is determined by the billing engine capabilities in a given release, as new service types appear when proper support is added
+      to the billing engine internal modules.</p>
+    <p> </p>
+    <p>A <strong>service </strong>is a description of the user’s activities from a business perspective. Services are the foundation of your billing configuration, and new services may be defined according to your business model. This permits flexible branding
+      of your services to customers and opens the possibility of bundling various services into one product. You can choose names and billing parameters for new services as desired. For instance, the same physical service, such as Internet access, can
+      be sold to one category of users as “High-speed Internet”, and to another category of users at a different rate as “Broadband connectivity”. Moreover, the same physical service can be sold to the <strong>same </strong>customer as multiple entities:
+      for example, the use of WiFi in the customer’s office and in an airport are treated as two separate services with a different price. A breakdown of charges per service is provided on the invoice and in the xDR browser.</p>
+    <h4>Rating base</h4>
+    <p>When information is received about the use of a particular service type, the billing engine must process it and decide which attribute or set of attributes are to be used later to calculate the charged amount. This may be quite different depending
+      on the service type: session duration, amount of transferred bytes, counter values, and so on. The logic determining which attributes are used for billing is called the rating base. For instance, the rating base for the Internet Access service (when
+      charging for a data transfer) will define what exactly constitutes the “traffic” which the customer is being charged for: the amount of downloaded data, the amount of uploaded data, or both.</p>
+    <p> </p>
+    <p>The most commonly used rating bases are:</p>
+    <ul>
+      <li>
+        <p class="List"><strong>session-time</strong> – These include phone calls, Internet access sessions and other services where the basis for calculating charges is the duration of time in which a customer used the service.</p>
+      </li>
+      <li>
+        <p class="List"><strong>quantity </strong>– These services include data transfer, text messaging, pay-per-view movies, or pizza delivery orders. The duration of the service session is either unsuitable or irrelevant for billing purposes. Rating is done based
+          on the type of service element used (e.g. if the movie purchased was a “New Release” or “Classic”) and the quantity (did you order two pizzas, or just one?).</p>
+      </li>
+    </ul>
+    <p> </p>
+    <p>Each service type supports at least one rating base. Potentially, however, it can have more than one, e.g. the Internet Access service can be charged based on either session time or the amount of data transferred.</p>
+    <p> </p>
+    <p>Every new service has a name and several important parameters:</p>
+    <ul>
+      <li>
+        <p class="List">The service type it uses (see below for a description of available service types).</p>
+      </li>
+      <li>
+        <p class="List">The rating base, defining which set of attributes will be used to calculate the charged amount.</p>
+      </li>
+      <li>
+        <p class="List">A base unit name; base units are those units in which the amount of the service “used” is reported to billing (e.g. information about session duration is usually given in seconds, while information about the amount of data transferred is given
+          in bytes). You cannot change the type of base units, since this is typically defined by the configuration and capabilities of your network equipment. You can, however, give it a name which is easy to understand, or even put it in your user’s
+          local language.</p>
+      </li>
+      <li>
+        <p class="List">Billing units are used for all functions in PortaBilling®. These are the units in which your pricing is specified, in which customers see the amounts on their invoices, and so on. For instance, the billing units for most telephony calls are minutes,
+          while in the case of data transfer services it could be kilobytes (for a GPRS data service) and megabytes or even gigabytes (for a broadband Internet connection service).</p>
+      </li>
+      <li>
+        <p class="List">Obviously, you need to define how your billing units relate to your base units. PortaBilling® gives you full flexibility to decide whether 1 kilobyte will equal 1,000 or 1,024 bytes for billing purposes. Rating schemes for other services may be
+          defined with the same degree of flexibility.</p>
+      </li>
+    </ul>
+    <h4>Measurement, base and billing units</h4>
+    <p>Measurement units are the units in which the billing engine receives information from the network. Obviously, the billing engine needs this information in order to interpret amounts correctly. However, a PortaBilling administrator rarely comes into
+      contact with these units, since for the purposes of adjusting the rating configuration he would use the following:</p>
+    <ul>
+      <li>
+        <p class="List"><strong>Base unit</strong> – The smallest elements that can be rated. This can be thought of as the “rounding threshold”. For example, if a customer has downloaded 758 bytes, but the base unit chosen is a kilobyte, for all further rating calculations
+          he is considered to have downloaded 1 kilobyte.</p>
+      </li>
+      <li>
+        <p class="List"><strong>Billing unit</strong> – The unit in which it is most convenient to express the amount of services used. The price of the service will also be defined using this unit.</p>
+      </li>
+    </ul>
+    <p> </p>
+    <p>The base unit must have either the same or less precision than the measurement unit, and the billing unit must have either the same or less precision than the base unit. Thus while in some cases the units will be equal (e.g. call duration is reported
+      in seconds and the base unit for the voice calls service is also one second), in other cases you can scale units to make them more convenient for your administrators and customers. Broadband Internet services are one good example. Although network
+      equipment always reports the amount of transferred data in bytes, it would certainly be very confusing to report the total downloaded data as “234564474 bytes”, or inform customers that “your current rate is $0.0000000014 per byte”. They will be
+      much happier to see “228 megabytes” or “$1.50 per gigabyte”. So in this case you would choose a megabyte as the base unit and a gigabyte as the billing unit.</p>
+    <h2>Service pools</h2>
+    <p>To provide several services to your customers within a single quota, consolidate them in service pools. However, every service within the pool can be measured differently (e.g. voice calls are measured in minutes, Internet access – in megabytes, etc.).
+      Therefore, service pools are measured in unified virtual units.</p>
+    <p> </p>
+    <p><img alt="service pool definition" height="769.9" src="../assets/images/PortaBilling_Admin_Guide_MR82_files/image13.png" width="331.5" /></p>
+    <p> </p>
+    <p>Virtual units are used to express the cost for using a particular service that is included in a pool (e.g. a minute’s worth of calls costs 5 units while an SMS message costs 1 unit). If your pricing changes, you can conveniently re-configure it within
+      a service pool.</p>
+    <p> </p>
+    <p><img alt="edit service pool" height="771.7" src="../assets/images/PortaBilling_Admin_Guide_MR82_files/image14.png" width="334.2" /></p>
+    <p> </p>
+    <p>Additionally, you can fine-tune the pricing for the same service within the pool. For example, make calls to Europe cost 10 units per minute while calls to Germany will only cost 8 units per minute. To do this, select the same service for different
+      destination groups and then configure the pricing.</p>
+    <p> </p>
+    <p>Service pools can only be used in volume discount plans and be applied for quotas and service wallets. Please refer to the <a href="../word_inport/Service_types_and_services.htm#_Quota_/_Balance">Quota / Balance Allocation for Multiple Services</a>      section for details.</p>
+    <p> </p>
+    <p>To summarize, service pools have the following parameters:</p>
+    <ol data-start="1" xmlns="">
+      <li>
+        <p class="List">Service pools apply for a complete destination group set.</p>
+      </li>
+      <li>
+        <p class="List">Each service within a pool is defined for a destination group.</p>
+      </li>
+      <li>
+        <p class="List">Service pools are measured in virtual units. Virtual units are used to express the cost for using a particular service and are mapped to this service’s units (e.g. a minute’s worth of calls costs 5 units while an SMS message costs 1 unit). Note
+          that the number of virtual units in the mapping must be higher than the number of service units.</p>
+      </li>
+      <li>
+        <p class="List">To fine-tune the pricing, you can add the same service multiple times for different destination groups and define a different unit mapping. Note that the service-destination group pairs within the service pool must be unique.</p>
+      </li>
+      <li>
+        <p class="List">You can create a single multi-service wallet or quota within the same volume discount plan.</p>
+      </li>
+    </ol>
+    <h2>Supported service types</h2>
+    <p>Once installed, PortaBilling® supports the service types shown in the table below. The Rating Base column refers to the applicable rating base options (S means “session-based” and Q means “quantity-based”):</p>
+    <p> </p>
+    <div align="left">
+      <table border="1.3" cellspacing="0" style="width:468.0px">
+        <colgroup xmlns="">
+          <col style="width:120px" />
+          <col style="width:65.066666666666666666666666667px" />
+          <col style="width:282.93333333333333333333333333px" />
+        </colgroup>
+        <tbody>
+          <tr>
+            <th>
+              <p class="TableRowTitle">Name</p>
+            </th>
+            <th>
+              <p class="TableRowTitle">Rating base</p>
+            </th>
+            <th>
+              <p class="TableRowTitle">Description</p>
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <p class="TableParagrapgh">Conferencing</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">S</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">Rating conference calls via the PortaSIP® IVR (or some conferencing server).</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="TableParagrapgh">Data service</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">Q</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">Rating data transfers using the amount of data transferred as the billing parameter.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="TableParagrapgh">Dial-up Internet</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">S</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">Dial-up Internet access sessions, rated based on session duration.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="TableParagrapgh">IPTV</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">Q</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">IPTV services, like pay-per-view movies, rated based on the number of views.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="TableParagrapgh">Internet access</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">S, Q</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">Internet access sessions (DSL, PPPoE, etc.), rated based on session duration or the amount of transferred data.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="TableParagrapgh">Measured service</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">Q</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">Rating the amount of an allocated resource (active calls, IP Centrex phone lines and other), charges are based on the number of resource units consumed.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="TableParagrapgh">Messaging service</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">Q</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">Rating messages (text, SMS, MMS, other); charges are based on the number of messages sent.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="TableParagrapgh">Mobile network provisioning</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">Q</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">This enables subscriber data provisioning to mobile networks.</p>
+              <p class="TableParagrapgh"> </p>
+              <p class="TableParagrapgh">When enabled for an account’s product, the External System Provisioning Framework (ESPF) provisions both policy / service quality parameters and account management operations accomplished in PortaBilling® to the mobile carrier’s core.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="TableParagrapgh">Quantity-based</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">Q</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">Generic quantity-based service type; can be used to apply charges for any service use expressible in numeric form (e.g. number of pizzas ordered).</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="TableParagrapgh">Session-based</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">S</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">Generic time-based service type; can be used to apply charges for any service use based on the length of time the service was accessed.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="TableParagrapgh">Voice calls</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">S</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">Rating <span data-condition="Others:VoIP">telephony </span>calls (incoming or outgoing) <span data-condition="Others:VoIP">made </span><span data-condition="Others:VoIP">via </span><span data-condition="Others:VoIP">PortaSIP®</span>
+                <span
+                  data-condition="Others:VoIP">, VoIP gateways</span><span data-condition="Others:VoIP"> or other equipment <span data-condition="Others:Wireless">using the Diamater requests received from the mobile core</span></span>.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="TableParagrapgh">Wi-Fi</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">S</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">Wireless Internet access sessions, rated based on session duration.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p class="TableParagrapgh">Service pool</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">Q</p>
+            </td>
+            <td>
+              <p class="TableParagrapgh">The set of services provided within a single usage plan.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
